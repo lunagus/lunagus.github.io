@@ -1,0 +1,172 @@
+{
+  "title": "Skills & Technologies",
+  "description": "A comprehensive toolkit for building modern, scalable web applications and APIs",
+  "categories": [
+    {
+      "category": "Programming Languages",
+      "description": "Proficient in multiple languages for both frontend and backend development",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "level": "Advanced",
+          "description": "ES6+, async/await, modern JavaScript features"
+        },
+        {
+          "name": "TypeScript",
+          "level": "Advanced",
+          "description": "Type-safe development, interfaces, generics"
+        },
+        {
+          "name": "Python",
+          "level": "Advanced",
+          "description": "Backend development, scripting, automation"
+        },
+        {
+          "name": "HTML5",
+          "level": "Expert",
+          "description": "Semantic markup, accessibility, modern HTML features"
+        },
+        {
+          "name": "CSS3",
+          "level": "Expert",
+          "description": "Flexbox, Grid, animations, responsive design"
+        },
+        {
+          "name": "SQL",
+          "level": "Intermediate",
+          "description": "Query optimization, database design, migrations"
+        }
+      ]
+    },
+    {
+      "category": "Frontend Frameworks & Libraries",
+      "description": "Building interactive, responsive user interfaces with modern tools",
+      "skills": [
+        {
+          "name": "React",
+          "level": "Advanced",
+          "description": "Hooks, Context API, component architecture, performance optimization"
+        },
+        {
+          "name": "Next.js",
+          "level": "Advanced",
+          "description": "App Router, Server Components, static generation, API routes"
+        },
+        {
+          "name": "TailwindCSS",
+          "level": "Advanced",
+          "description": "Utility-first CSS, responsive design, custom configurations"
+        },
+        {
+          "name": "TypeScript",
+          "level": "Advanced",
+          "description": "Type safety, interfaces, type inference"
+        }
+      ]
+    },
+    {
+      "category": "Backend & APIs",
+      "description": "Building robust server-side applications and RESTful APIs",
+      "skills": [
+        {
+          "name": "Django",
+          "level": "Advanced",
+          "description": "REST Framework, authentication, ORM, middleware, admin panel"
+        },
+        {
+          "name": "Node.js",
+          "level": "Intermediate",
+          "description": "Express.js, async operations, middleware, API development"
+        },
+        {
+          "name": "REST APIs",
+          "level": "Advanced",
+          "description": "Design, implementation, documentation, authentication (JWT, OAuth)"
+        },
+        {
+          "name": "Express",
+          "level": "Intermediate",
+          "description": "Routing, middleware, error handling, Server-Sent Events"
+        }
+      ]
+    },
+    {
+      "category": "Databases & Storage",
+      "description": "Designing and managing efficient data storage solutions",
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "level": "Intermediate",
+          "description": "Schema design, queries, relationships, migrations"
+        },
+        {
+          "name": "MongoDB",
+          "level": "Intermediate",
+          "description": "Document storage, aggregation, indexing"
+        },
+        {
+          "name": "SQLite",
+          "level": "Intermediate",
+          "description": "Lightweight database for development and small applications"
+        }
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "description": "Streamlining development workflows and deployment processes",
+      "skills": [
+        {
+          "name": "Git",
+          "level": "Advanced",
+          "description": "Version control, branching strategies, collaboration"
+        },
+        {
+          "name": "Docker",
+          "level": "Intermediate",
+          "description": "Containerization, Docker Compose, image optimization"
+        },
+        {
+          "name": "GitHub Actions",
+          "level": "Intermediate",
+          "description": "CI/CD pipelines, automated testing, deployments"
+        },
+        {
+          "name": "Nginx",
+          "level": "Intermediate",
+          "description": "Reverse proxy, load balancing, static file serving"
+        },
+        {
+          "name": "Gunicorn",
+          "level": "Intermediate",
+          "description": "WSGI server for Python applications"
+        },
+        {
+          "name": "VS Code",
+          "level": "Expert",
+          "description": "Development environment, extensions, debugging"
+        },
+        {
+          "name": "Linux",
+          "level": "Intermediate",
+          "description": "System administration, shell scripting, server management"
+        }
+      ]
+    },
+    {
+      "category": "Languages",
+      "description": "Communication and collaboration across global teams",
+      "skills": [
+        {
+          "name": "Español",
+          "level": "Native",
+          "description": "Native speaker - full professional proficiency"
+        },
+        {
+          "name": "English",
+          "level": "Fluent",
+          "description": "Fluent speaker - professional communication and technical documentation"
+        }
+      ]
+    }
+  ]
+}

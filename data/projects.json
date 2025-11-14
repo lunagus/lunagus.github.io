@@ -1,0 +1,94 @@
+[
+  {
+    "id": "1",
+    "title": "SongSeek",
+    "description": "Full-stack music migration platform for converting playlists across Spotify, YouTube Music, Deezer, Apple Music, and more.",
+    "longDescription": "SongSeek is a comprehensive full-stack music migration platform that allows users to convert playlists between major streaming services. Built with React and Express, it features intelligent matching algorithms, OAuth authentication, real-time status updates via Server-Sent Events, playlist search and creation via official APIs, and a modern mobile-first interface. The platform supports bidirectional conversion between Spotify, YouTube Music, Deezer, Apple Music, Tidal, and Amazon Music, with manual fix options for unmatched tracks and an admin dashboard with conversion analytics.",
+    "technologies": ["React", "Express", "TypeScript", "Node.js", "OAuth", "REST APIs", "Server-Sent Events"],
+    "tags": ["Full-Stack", "API Integration", "Music"],
+    "githubUrl": "https://github.com/lunagus/SongSeek",
+    "demoUrl": "https://songseek.vercel.app",
+    "screenshots": [],
+    "featured": true
+  },
+  {
+    "id": "2",
+    "title": "PuntoCultura",
+    "description": "Full-stack web platform for managing and showcasing events and cultural institutions for the Santiago del Estero Department of Culture.",
+    "longDescription": "PuntoCultura is a comprehensive web platform developed for the Santiago del Estero Department of Culture. Built with Django REST Framework and vanilla JavaScript, it features role-based access control, JWT authentication, RESTful APIs, an advanced admin dashboard with CRUD operations, calendar views with FullCalendar, advanced filtering system, SQL injection protection middleware, and a modern responsive interface. The platform allows administrators and editors to manage cultural events, institutions, and content with support for drafts and publication workflows.",
+    "technologies": ["Django", "Django REST Framework", "PostgreSQL", "JavaScript", "JWT", "HTML5", "CSS3", "FullCalendar"],
+    "tags": ["Full-Stack", "Django", "Government"],
+    "githubUrl": "https://github.com/lunagus/PuntoCultura",
+    "demoUrl": "https://puntocultura.netlify.app/eventos",
+    "screenshots": [],
+    "featured": true
+  },
+  {
+    "id": "3",
+    "title": "TuPDF",
+    "description": "Lightweight, open-source PDF toolkit for modern browsers with client-side processing for privacy and speed.",
+    "longDescription": "TuPDF is a comprehensive PDF toolkit that runs entirely in the browser, ensuring privacy and zero server dependencies. Built with Next.js, React, TypeScript, and MUI, it features PDF splitting (extract specific pages or ranges), PDF merging (combine multiple files), page organization (rearrange, rotate, delete pages with visual grid), page-to-image conversion (PNG/JPG export), PDF optimization and compression, full internationalization (8 languages), modern responsive UI with dark mode, and 100% client-side processing for maximum privacy. All operations use Web APIs and run locally in the browser.",
+    "technologies": ["Next.js", "React", "TypeScript", "MUI", "pdf-lib", "PDF.js", "i18next"],
+    "tags": ["Frontend", "PDF Tools", "Privacy"],
+    "githubUrl": "https://github.com/lunagus/TuPDF",
+    "demoUrl": "https://tupdf.vercel.app",
+    "screenshots": [],
+    "featured": true
+  },
+  {
+    "id": "4",
+    "title": "Ahorcado",
+    "description": "Modern hangman game built with Next.js, TypeScript, and TailwindCSS with multi-language support and dynamic word generation.",
+    "longDescription": "Ahorcado is a modern implementation of the classic hangman game, featuring a beautiful Material Design-inspired interface. Built with Next.js 15, TypeScript, and TailwindCSS, it includes multi-language support (Spanish and English), dynamic word generation from the Datamuse API, multiple difficulty levels (Easy, Intermediate, Hard), dark mode support, responsive design, full keyboard input support, score tracking system, and smooth animations. The game provides an engaging user experience with real-time feedback and intuitive controls.",
+    "technologies": ["Next.js", "TypeScript", "TailwindCSS", "Radix UI", "Datamuse API", "React Hooks"],
+    "tags": ["Frontend", "Game", "Next.js"],
+    "githubUrl": "https://github.com/lunagus/Ahorcado",
+    "demoUrl": "https://ahorcado-pi.vercel.app",
+    "screenshots": [],
+    "featured": false
+  },
+  {
+    "id": "5",
+    "title": "Clipper",
+    "description": "Minimal desktop application for trimming, encoding, and uploading videos using FFmpeg with an intuitive GUI.",
+    "longDescription": "Clipper is a modern, accessible GUI application for video processing built with Python and Tkinter. It provides an intuitive interface for video trimming with interactive timeline, encoding presets (Very Fast to Very Slow), advanced encoding options (custom codec, CRF, FPS, resolution, speed), multiple output formats (MP4, MKV, WebM), built-in upload functionality to file hosting services, real-time progress updates, threaded processing to avoid UI freezes, and a clean dark material-inspired design. Perfect for quickly processing video files from movies, game captures, and TV shows.",
+    "technologies": ["Python", "Tkinter", "FFmpeg", "Threading"],
+    "tags": ["Desktop", "Video Processing", "Python"],
+    "githubUrl": "https://github.com/lunagus/Clipper",
+    "demoUrl": null,
+    "screenshots": [],
+    "featured": false
+  },
+  {
+    "id": "6",
+    "title": "Userscripts",
+    "description": "A collection of lightweight userscripts for enhancing web browsing experience with keyboard controls, URL cleaning, and navigation utilities.",
+    "longDescription": "",
+    "technologies": ["JavaScript", "Userscripts", "Tampermonkey", "DOM Manipulation"],
+    "tags": ["Browser Extension", "JavaScript", "Utilities"],
+    "githubUrl": "https://github.com/lunagus",
+    "demoUrl": null,
+    "screenshots": [],
+    "featured": false,
+    "userscripts": [
+      {
+        "name": "HTML5 Video Speed Controls",
+        "description": "Keyboard shortcuts for playback speed and frame stepping on HTML5 videos",
+        "githubUrl": "https://github.com/lunagus/html5-video-speed-control",
+        "features": ["Speed control (X/C/Z keys)", "Frame-by-frame navigation (Q/E keys)", "Smart video detection", "Tooltip overlay"]
+      },
+      {
+        "name": "Reddit Translation Remover",
+        "description": "Automatically removes Reddit's translation parameters from URLs",
+        "githubUrl": "https://github.com/lunagus/remove-reddit-autotranslation",
+        "features": ["Removes ?tl=xx-xxx parameters", "Works on all Reddit subpages", "Seamless redirects", "URL change monitoring"]
+      },
+      {
+        "name": "Top and Down Buttons",
+        "description": "Smooth scroll-to-top and scroll-to-bottom buttons for any webpage",
+        "githubUrl": "https://github.com/lunagus/top-and-down-buttons",
+        "features": ["Click to scroll", "Hover for continuous scroll", "Auto-hide at top/bottom", "Customizable configuration"]
+      }
+    ]
+  }
+]

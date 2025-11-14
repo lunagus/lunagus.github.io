@@ -1,0 +1,16 @@
+{
+"greeting": "Welcome, my name is",
+"name": "Agustin Luna",
+"title": "Software Developer",
+"description": "I specialize in designing and building clean, scalable, and reliable software. Passionate about technology and continous learning, I'm always looking for new challenges and opportunities to grow.",
+  "cta": {
+    "primary": {
+      "label": "Download CV",
+      "action": "download-cv"
+    },
+    "secondary": {
+      "label": "Get In Touch",
+      "action": "scroll-to-contact"
+    }
+  }
+}
