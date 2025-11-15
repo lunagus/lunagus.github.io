@@ -12,7 +12,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 
 import { parseCommand, getAutocomplete } from "@/lib/terminal/parser";
 import { fadeInUp } from "@/lib/animations";
@@ -114,7 +114,7 @@ export function Terminal() {
   };
 
   // Boot sequence
-  const bootSequence = [
+  const bootSequence = useMemo(() => [
     "Welcome! I'm Agustin Luna, dev.",
     "",
     "💡 Type 'help' to explore my portfolio commands",
@@ -122,7 +122,7 @@ export function Terminal() {
     "   • Try 'whoami', 'uptime', or 'projects --view=SongSeek'",
     "   • Press Tab to autocomplete commands",
     "",
-  ];
+  ], []);
 
   // Typing animation for boot sequence
   useEffect(() => {
@@ -171,7 +171,7 @@ export function Terminal() {
         });
       }, 300);
     }
-  }, [isBooting, currentBootLine, currentTypingIndex, isTyping, bootSequence.length]);
+  }, [isBooting, currentBootLine, currentTypingIndex, isTyping, bootSequence]);
 
   // Typing animation for command output
   const typeOutput = (output: string[]) => {

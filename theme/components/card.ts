@@ -1,6 +1,7 @@
-import { ComponentStyleConfig } from '@chakra-ui/react'
+import { ComponentMultiStyleConfig } from "@chakra-ui/react";
 
-export const Card: ComponentStyleConfig = {
+export const Card: ComponentMultiStyleConfig = {
+  parts: ["container"],
   baseStyle: (props) => ({
     container: {
       borderRadius: '2xl',
@@ -42,5 +43,5 @@ export const Card: ComponentStyleConfig = {
   defaultProps: {
     variant: 'default',
   },
-}
+};
 
