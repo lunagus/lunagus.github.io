@@ -1,6 +1,4 @@
 import { TerminalCommand } from "./types";
-import heroData from "@/data/hero.json";
-import skillsData from "@/data/skills.json";
 import projectsData from "@/data/projects.json";
 import contactData from "@/data/contact.json";
 
@@ -19,6 +17,41 @@ const levelMap: { [key: string]: string } = {
   'Intermediate': '██████▒▒▒▒ 60%',
   'Native': '██████████ 100%',
   'Fluent': '████████▒▒ 80%'
+};
+
+// Static metadata for project titles and short descriptions used in the terminal.
+// This keeps the terminal copy independent from i18n and the cleaned projects.json.
+const projectMeta: Record<string, { title: string; description: string }> = {
+  "1": {
+    title: "SongSeek",
+    description:
+      "Full-stack music migration platform for converting playlists across streaming services.",
+  },
+  "2": {
+    title: "PuntoCultura",
+    description:
+      "Cultural events and institutions platform for the Subsecretaría de Cultura of Santiago del Estero.",
+  },
+  "3": {
+    title: "TuPDF",
+    description:
+      "Privacy-focused in-browser PDF toolkit for splitting, merging, and optimizing PDFs.",
+  },
+  "4": {
+    title: "Ahorcado",
+    description:
+      "Modern hangman game with multi-language support and dynamic word generation.",
+  },
+  "5": {
+    title: "Clipper",
+    description:
+      "Desktop GUI for trimming, encoding, and uploading videos using FFmpeg.",
+  },
+  "6": {
+    title: "Userscripts",
+    description:
+      "Collection of lightweight userscripts to enhance web browsing with keyboard shortcuts and URL cleanup.",
+  },
 };
 
 // --- CORE COMMANDS ---
@@ -69,8 +102,8 @@ export const commands: TerminalCommand[] = [
       "🔷 WHOAMI 🔷",
       "═══════════════════════════════════════════════════════════════",
       "",
-      `👤 ${heroData.name}`,
-      `🎯 ${heroData.title}`,
+      "👤 Agustin Luna",
+      "🎯 Software Developer",
       `📍 La Banda, Santiago del Estero, Argentina`,
       "",
       "💻 Full-Stack Developer | Open Source Contributor",
@@ -100,12 +133,12 @@ export const commands: TerminalCommand[] = [
       "🔷 PROFILE 🔷",
       "═══════════════════════════════════════════════════════════════",
       "",
-      `👤 Name: ${heroData.name}`,
-      `🎯 Role: ${heroData.title}`,
+      "👤 Name: Agustin Luna",
+      "🎯 Role: Software Developer",
       `📍 Location: La Banda, Santiago del Estero, Argentina`,
       `📧 Email: hernanagustinluna@gmail.com`,
       "",
-      `📝 Summary: ${heroData.description}`,
+      "📝 Summary: Passionate about technology and continuous learning, specialized in designing and building clean, scalable, and reliable software.",
       "",
       "💡 Passionate about technology and continuous learning, always looking for new challenges.",
     ],
@@ -248,7 +281,8 @@ export const commands: TerminalCommand[] = [
       projectsData
         .filter((project: any) => project.featured)
         .forEach((project: any) => {
-          output.push(`   • ${project.id.padEnd(15)} - ${project.title}`);
+          const meta = projectMeta[project.id] ?? { title: project.id, description: "" };
+          output.push(`   • ${project.id.padEnd(3)} - ${meta.title}`);
         });
 
       output.push("", "---", "", "📁 ALL PROJECTS:");
@@ -256,7 +290,8 @@ export const commands: TerminalCommand[] = [
       projectsData
         .filter((project: any) => !project.featured)
         .forEach((project: any) => {
-          output.push(`   • ${project.id.padEnd(15)} - ${project.title}`);
+          const meta = projectMeta[project.id] ?? { title: project.id, description: "" };
+          output.push(`   • ${project.id.padEnd(3)} - ${meta.title}`);
         });
 
       output.push("", "💡 Use 'projects --view=<ID>' for detailed information.");
@@ -279,8 +314,11 @@ export const commands: TerminalCommand[] = [
       projectsData
         .filter((project: any) => project.featured)
         .forEach((project: any) => {
-          output.push(`⭐ 📁 ${project.title}`);
-          output.push(`   ${project.description}`);
+          const meta = projectMeta[project.id] ?? { title: project.id, description: "" };
+          output.push(`⭐ 📁 ${meta.title}`);
+          if (meta.description) {
+            output.push(`   ${meta.description}`);
+          }
           output.push(`   🔗 ${project.githubUrl}`);
           if (project.demoUrl) {
             output.push(`   🌐 ${project.demoUrl}`);
@@ -293,26 +331,29 @@ export const commands: TerminalCommand[] = [
     },
   },
 
-  // Dynamic project view commands
-  ...projectsData.map((project: any) => ({
-    name: `projects --view=${project.id}`,
-    description: `Show detailed view of ${project.title}`,
-    handler: () => [
-      "",
-      `🔷 ${project.title.toUpperCase()} 🔷`,
-      "═══════════════════════════════════════════════════════════════",
-      "",
-      `📝 ${project.description}`,
-      "",
-      "🔗 LINKS:",
-      `   🐙 GitHub: ${project.githubUrl}`,
-      project.demoUrl ? `   🌐 Live Demo: ${project.demoUrl}` : "",
-      "",
-      "🛠️ TECHNOLOGIES:",
-      `   ${project.technologies.join(", ")}`,
-      "",
-    ]
-  })),
+  // Dynamic project view commands (static text metadata + non-translatable data from projects.json)
+  ...projectsData.map((project: any) => {
+    const meta = projectMeta[project.id] ?? { title: project.id, description: "" };
+    return {
+      name: `projects --view=${project.id}`,
+      description: `Show detailed view of ${meta.title}`,
+      handler: () => [
+        "",
+        `🔷 ${meta.title.toUpperCase()} 🔷`,
+        "═══════════════════════════════════════════════════════════════",
+        "",
+        meta.description ? `📝 ${meta.description}` : "",
+        "",
+        "🔗 LINKS:",
+        `   🐙 GitHub: ${project.githubUrl}`,
+        project.demoUrl ? `   🌐 Live Demo: ${project.demoUrl}` : "",
+        "",
+        "🛠️ TECHNOLOGIES:",
+        `   ${project.technologies.join(", ")}`,
+        "",
+      ],
+    };
+  }),
 
   // --- STACK COMMANDS (Consolidated output) ---
   {
