@@ -1,7 +1,5 @@
 # Developer Portfolio - Agustin Luna
 
-**([https://lunagus.github.io/portfolio](https://lunagus.github.io/portfolio))**
-
 A modern, interactive portfolio website built with Next.js 14, TypeScript, and Chakra UI. Features a unique terminal interface, project showcase, and responsive design optimized for GitHub Pages deployment.
 
 ## ✨ Features
