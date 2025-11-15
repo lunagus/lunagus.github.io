@@ -1,0 +1,173 @@
+{
+  "hero": {
+    "greeting": "Welcome, my name is",
+    "name": "Agustin Luna",
+    "title": "Software Developer",
+    "description": "Passionate about technology and continuous learning, I specialize in designing and building clean, scalable, and reliable software.",
+    "cta": {
+      "primary": {
+        "label": "Download CV",
+        "action": "download-cv"
+      },
+      "secondary": {
+        "label": "Get In Touch",
+        "action": "scroll-to-contact"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!",
+    "form": {
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name",
+          "required": true
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "your.email@example.com",
+          "required": true
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "Project Inquiry",
+          "required": false
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Your message...",
+          "required": true,
+          "rows": 6
+        }
+      },
+      "submit": {
+        "label": "Send Message",
+        "loading": "Sending..."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "description": "The core technologies I use to architect and build high-performance software",
+    "categories": {
+      "programmingLanguages": {
+        "title": "Programming Languages",
+        "description": "Fundamental languages for full-stack logic and data interaction"
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Building interactive, responsive user interfaces with modern tools"
+      },
+      "backend": {
+        "title": "Backend & APIs",
+        "description": "Building robust server-side applications and RESTful APIs"
+      },
+      "databases": {
+        "title": "Databases & Storage",
+        "description": "Designing and managing efficient data storage solutions"
+      },
+      "devops": {
+        "title": "DevOps & Tools",
+        "description": "Streamlining development workflows and deployment processes"
+      },
+      "languages": {
+        "title": "Languages",
+        "description": "Communication and collaboration across global teams"
+      }
+    },
+    "descriptions": {
+      "Python": "Backend development, scripting, automation, data processing",
+      "JavaScript": "ES6+, async/await, modern JavaScript features, DOM manipulation",
+      "SQL": "Query optimization, database design, complex joins, migrations",
+      "HTML5": "Semantic markup, accessibility, modern HTML features",
+      "CSS3": "Flexbox, Grid, animations, responsive design",
+      "Java": "Object-oriented programming, Spring ecosystem, REST APIs, backend services, and enterprise applications",
+      "React": "Hooks, Context API, component architecture, performance optimization",
+      "TypeScript": "Type safety, interfaces, generics, advanced type patterns",
+      "Next.js": "SSR/SSG, routing, API routes, image optimization",
+      "TailwindCSS": "Utility-first design, custom components, themes, responsive design",
+      "Framer Motion": "Complex animations, gestures, variants, performance optimization",
+      "Django": "MVC, ORM, authentication, middleware, REST framework",
+      "REST APIs": "API design, HTTP status codes, authentication, documentation",
+      "JWT": "Access tokens, refresh tokens, security, implementation",
+      "Postman": "API testing, collections, automation, documentation",
+      "Express": "Middleware, routing, error handling, design patterns",
+      "Prisma": "Type-safe ORM, migrations, relationships, query optimization",
+      "PostgreSQL": "Complex queries, optimization, indexing, replication",
+      "SQLite": "Lightweight databases, queries, migrations, local development",
+      "MongoDB": "NoSQL, aggregations, indexing, horizontal scaling",
+      "Redis": "Caching, pub/sub, data structures, performance optimization",
+      "Supabase": "Postgres-based backend-as-a-service, authentication, storage, real-time APIs",
+      "Git": "Version control, branching, merging, workflow strategies",
+      "GitHub Actions": "CI/CD, workflows, automation, deployment",
+      "VS Code": "Extensions, debugging, shortcuts, customization",
+      "Linux": "Command line, scripting, system administration, networking",
+      "Docker": "Containers, Docker Compose, image optimization, orchestration",
+      "Nginx": "Web server, reverse proxy, load balancing, configuration",
+      "Spanish": "Native, professional communication, technical vocabulary",
+      "English": "Bilingual, technical documentation, global collaboration"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewDetails": "View Details",
+    "tryItLive": "Try it live",
+    "featured": "Featured",
+    "descriptions": {
+      "1": {
+        "title": "SongSeek",
+        "description": "Full-stack music migration platform for converting playlists across Spotify, YouTube Music, Deezer, Apple Music, and more.",
+        "longDescription": "SongSeek is a comprehensive full-stack music migration platform that allows users to convert playlists between major streaming services. Built with React and Express, it features intelligent matching algorithms, OAuth authentication, real-time status updates via Server-Sent Events, playlist search and creation via official APIs, and a modern mobile-first interface. The platform supports bidirectional conversion between Spotify, YouTube Music, Deezer, Apple Music, Tidal, and Amazon Music, with manual fix options for unmatched tracks and an admin dashboard with conversion analytics."
+      },
+      "2": {
+        "title": "PuntoCultura",
+        "description": "Full-stack web platform for managing and showcasing events and cultural institutions for the Santiago del Estero Department of Culture.",
+        "longDescription": "PuntoCultura is a comprehensive web platform developed for the Santiago del Estero Department of Culture. Built with Django REST Framework and vanilla JavaScript, it features role-based access control, JWT authentication, RESTful APIs, an advanced admin dashboard with CRUD operations, calendar views with FullCalendar, advanced filtering system, SQL injection protection middleware, and a modern responsive interface. The platform allows administrators and editors to manage cultural events, institutions, and content with support for drafts and publication workflows."
+      },
+      "3": {
+        "title": "TuPDF",
+        "description": "Open-source lightweight PDF toolkit for modern browsers with client-side processing for privacy and speed.",
+        "longDescription": "TuPDF is a comprehensive PDF toolkit that runs entirely in the browser, ensuring privacy and zero server dependencies. Built with Next.js, React, TypeScript and MUI, it features PDF splitting (extract specific pages or ranges), PDF merging (combine multiple files), page organization (rearrange, rotate, remove pages with visual grid), page-to-image conversion (PNG/JPG export), PDF optimization and compression, full internationalization (8 languages), modern responsive interface with dark mode, and 100% client-side processing for maximum privacy. All operations use Web APIs and execute locally in your browser."
+      },
+      "4": {
+        "title": "Ahorcado",
+        "description": "Modern hangman game built with Next.js, TypeScript and TailwindCSS with multi-language support and dynamic word generation.",
+        "longDescription": "Ahorcado is a modern implementation of the classic hangman game, featuring a beautiful Material Design-inspired interface. Built with Next.js 15, TypeScript and TailwindCSS, it includes multi-language support (Spanish and English), dynamic word generation from Datamuse API, multiple difficulty levels (Easy, Intermediate, Difficult), dark mode support, responsive design, full keyboard input support, score tracking system, and smooth animations. The game provides an engaging user experience with real-time feedback and intuitive controls."
+      },
+      "5": {
+        "title": "Clipper",
+        "description": "Minimalist desktop application for trimming, encoding, and uploading videos using FFmpeg with intuitive GUI.",
+        "longDescription": "Clipper is a modern and accessible GUI application for video processing built with Python and Tkinter. It provides an intuitive interface for video trimming with interactive timeline, encoding presets (Very Fast to Very Slow), advanced encoding options (custom codec, CRF, FPS, resolution, speed), multiple output formats (MP4, MKV, WebM), integrated upload functionality to file hosting services, real-time progress updates, threaded processing to prevent UI freezes, and a Material-inspired dark design. Perfect for quickly processing video files from movies, gaming recordings, and TV shows."
+      },
+      "6": {
+        "title": "Userscripts",
+        "description": "A collection of lightweight userscripts to enhance web browsing experience with keyboard controls, URL cleaning, and navigation utilities.",
+        "longDescription": "A collection of lightweight userscripts to enhance web browsing experience with keyboard controls, URL cleaning, and navigation utilities."
+      }
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "An interactive terminal experience showcasing my professional journey"
+  },
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "about": "About",
+    "contact": "Contact",
+    "terminal": "Terminal"
+  },
+  "common": {
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "featured": "Featured",
+    "technologies": "Technologies",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "close": "Close",
+    "copyright": "© {{year}} Agustin Luna. All rights reserved."
+  }
+}

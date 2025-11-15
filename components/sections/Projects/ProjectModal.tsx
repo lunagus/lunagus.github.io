@@ -25,6 +25,7 @@ import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 import { Github, ExternalLink, ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react'
 import React, { useState, useEffect, useCallback } from 'react'
 import { Project } from '@/types/project'
+import { useI18n } from '@/lib/i18n/context'
 
 interface ProjectModalProps {
   project: Project
@@ -43,6 +44,17 @@ export function ProjectModal({ project, allProjects, isOpen, onClose, onProjectC
   const borderColor = useColorModeValue('gray.200', 'gray.700')
   const userscriptBg = useColorModeValue('gray.50', 'gray.700')
   const controls = useAnimation()
+  const { t, locale } = useI18n()
+  
+  // Helper function to get translated project content
+  const getProjectContent = (project: Project, field: 'title' | 'description' | 'longDescription') => {
+    if (t.projects.descriptions[project.id as keyof typeof t.projects.descriptions]) {
+      const projectTranslations = t.projects.descriptions[project.id as keyof typeof t.projects.descriptions]
+      return projectTranslations[field]
+    }
+    // Fallback - return empty string if no translation found
+    return ''
+  }
 
   // Find current project index
   useEffect(() => {
@@ -205,7 +217,7 @@ export function ProjectModal({ project, allProjects, isOpen, onClose, onProjectC
                     >
                       <Image
                         src={project.screenshots[currentImageIndex]}
-                        alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                        alt={`${getProjectContent(project, 'title')} screenshot ${currentImageIndex + 1}`}
                         width="100%"
                         height="100%"
                         objectFit="contain"
@@ -296,7 +308,7 @@ export function ProjectModal({ project, allProjects, isOpen, onClose, onProjectC
               <VStack align="stretch" spacing={4}>
                 <HStack justify="space-between" align="flex-start">
                   <Heading as="h2" fontSize="3xl" fontWeight="700" flex="1">
-                    {project.title}
+                    {getProjectContent(project, 'title')}
                   </Heading>
                   {allProjects.length > 1 && (
                     <Text fontSize="sm" color="gray.500" whiteSpace="nowrap" pt={2}>
@@ -304,9 +316,9 @@ export function ProjectModal({ project, allProjects, isOpen, onClose, onProjectC
                     </Text>
                   )}
                 </HStack>
-                {project.longDescription && (
+                {getProjectContent(project, 'longDescription') && (
                   <Text color="gray.400" lineHeight="1.8">
-                    {project.longDescription}
+                    {getProjectContent(project, 'longDescription')}
                   </Text>
                 )}
               </VStack>
@@ -343,7 +355,7 @@ export function ProjectModal({ project, allProjects, isOpen, onClose, onProjectC
                           size="sm"
                           width="full"
                         >
-                          View Code
+                          {t.common.viewCode}
                         </Button>
                       </VStack>
                     </Box>
@@ -353,7 +365,7 @@ export function ProjectModal({ project, allProjects, isOpen, onClose, onProjectC
 
               <VStack align="stretch" spacing={3}>
                 <Heading as="h3" fontSize="lg" fontWeight="600">
-                  Technologies
+                  {t.common.technologies}
                 </Heading>
                 <Box display="flex" flexWrap="wrap" gap={2}>
                   {project.technologies.map((tech) => (
@@ -392,7 +404,7 @@ export function ProjectModal({ project, allProjects, isOpen, onClose, onProjectC
                     flex={project.demoUrl ? '1' : 'none'}
                     width={project.demoUrl ? 'auto' : 'full'}
                   >
-                    View Code
+                    {t.common.viewCode}
                   </Button>
                   {project.demoUrl && (
                     <Button
@@ -401,7 +413,7 @@ export function ProjectModal({ project, allProjects, isOpen, onClose, onProjectC
                       variant="outline"
                       flex="1"
                     >
-                      Live Demo
+                      {t.common.viewProject}
                     </Button>
                   )}
                 </HStack>

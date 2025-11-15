@@ -21,10 +21,22 @@ import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Card } from '@/components/ui/Card'
 import { staggerContainer, staggerItem } from '@/lib/animations'
 import { trackProjectClick } from '@/lib/analytics'
+import { useI18n } from '@/lib/i18n/context'
 import projectsData from '@/data/projects.json'
 
 export function ProjectsGrid() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const { t, locale } = useI18n()
+  
+  // Helper function to get translated project content
+  const getProjectContent = (project: Project, field: 'title' | 'description' | 'longDescription') => {
+    if (t.projects.descriptions[project.id as keyof typeof t.projects.descriptions]) {
+      const projectTranslations = t.projects.descriptions[project.id as keyof typeof t.projects.descriptions]
+      return projectTranslations[field]
+    }
+    // Fallback - return empty string if no translation found
+    return ''
+  }
 
   const projects: Project[] = projectsData as Project[]
 
@@ -33,7 +45,7 @@ export function ProjectsGrid() {
       <Box id="projects" as="section" py={20} position="relative">
         <Container maxW="1200px">
           <VStack spacing={12} align="stretch">
-            <SectionTitle title="Featured Projects" />
+            <SectionTitle title={t.projects.title} />
 
             <SimpleGrid
               columns={{ base: 1, md: 2 }}
@@ -75,17 +87,17 @@ export function ProjectsGrid() {
                           borderRadius="full"
                           px={2}
                         >
-                          Featured
+                          {t.common.featured}
                         </Badge>
                       )}
                     </Box>
 
                     <VStack align="flex-start" spacing={3} flex="1">
                       <Box fontSize="xl" fontWeight="600">
-                        {project.title}
+                        {getProjectContent(project, 'title')}
                       </Box>
                       <Text color="gray.400" fontSize="sm" flex="1">
-                        {project.description}
+                        {getProjectContent(project, 'description')}
                       </Text>
 
                       <Box display="flex" flexWrap="wrap" gap={2} mb={2}>
@@ -140,7 +152,7 @@ export function ProjectsGrid() {
                               }}
                               leftIcon={<ExternalLink size={16} />}
                             >
-                              Try it live
+                              {t.projects.tryItLive}
                             </Button>
                           )}
                           <Button
@@ -152,8 +164,8 @@ export function ProjectsGrid() {
                               setSelectedProject(project)
                             }}
                           >
-                            View Details
-                          </Button>
+                              {t.projects.viewDetails}
+                            </Button>
                         </HStack>
                       </HStack>
                     </VStack>

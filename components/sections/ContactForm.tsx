@@ -20,7 +20,7 @@ import { fadeInUp } from '@/lib/animations'
 import { sendEmail } from '@/lib/email'
 import { validateEmail } from '@/lib/utils'
 import { trackContactFormSubmit } from '@/lib/analytics'
-import contactData from '@/data/contact.json'
+import { useI18n } from '@/lib/i18n/context'
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -31,6 +31,7 @@ export function ContactForm() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const toast = useToast()
+  const { t } = useI18n()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -40,7 +41,7 @@ export function ContactForm() {
   const validateForm = () => {
     if (!formData.name.trim()) {
       toast({
-        title: 'Name is required',
+        title: t.contact.form.fields.name.label + ' is required',
         status: 'error',
         duration: 3000,
         isClosable: true,
@@ -49,7 +50,7 @@ export function ContactForm() {
     }
     if (!formData.email.trim() || !validateEmail(formData.email)) {
       toast({
-        title: 'Valid email is required',
+        title: 'Valid ' + t.contact.form.fields.email.label.toLowerCase() + ' is required',
         status: 'error',
         duration: 3000,
         isClosable: true,
@@ -58,7 +59,7 @@ export function ContactForm() {
     }
     if (!formData.message.trim()) {
       toast({
-        title: 'Message is required',
+        title: t.contact.form.fields.message.label + ' is required',
         status: 'error',
         duration: 3000,
         isClosable: true,
@@ -124,8 +125,8 @@ export function ContactForm() {
             variants={fadeInUp}
           >
             <SectionTitle
-              title={contactData.title}
-              subtitle={contactData.description}
+              title={t.contact.title}
+              subtitle={t.contact.description}
             />
           </motion.div>
 
@@ -139,14 +140,14 @@ export function ContactForm() {
               <Box as="form" onSubmit={handleSubmit}>
                 <VStack spacing={6}>
                   <FormControl isRequired>
-                    <FormLabel htmlFor="name">{contactData.form.fields.name.label}</FormLabel>
+                    <FormLabel htmlFor="name">{t.contact.form.fields.name.label}</FormLabel>
                     <Input
                       id="name"
                       name="name"
                       type="text"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder={contactData.form.fields.name.placeholder}
+                      placeholder={t.contact.form.fields.name.placeholder}
                       size="lg"
                       borderRadius="xl"
                       _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px var(--chakra-colors-brand-500)' }}
@@ -154,14 +155,14 @@ export function ContactForm() {
                   </FormControl>
 
                   <FormControl isRequired>
-                    <FormLabel htmlFor="email">{contactData.form.fields.email.label}</FormLabel>
+                    <FormLabel htmlFor="email">{t.contact.form.fields.email.label}</FormLabel>
                     <Input
                       id="email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder={contactData.form.fields.email.placeholder}
+                      placeholder={t.contact.form.fields.email.placeholder}
                       size="lg"
                       borderRadius="xl"
                       _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px var(--chakra-colors-brand-500)' }}
@@ -169,14 +170,14 @@ export function ContactForm() {
                   </FormControl>
 
                   <FormControl>
-                    <FormLabel htmlFor="subject">{contactData.form.fields.subject.label}</FormLabel>
+                    <FormLabel htmlFor="subject">{t.contact.form.fields.subject.label}</FormLabel>
                     <Input
                       id="subject"
                       name="subject"
                       type="text"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder={contactData.form.fields.subject.placeholder}
+                      placeholder={t.contact.form.fields.subject.placeholder}
                       size="lg"
                       borderRadius="xl"
                       _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px var(--chakra-colors-brand-500)' }}
@@ -184,15 +185,15 @@ export function ContactForm() {
                   </FormControl>
 
                   <FormControl isRequired>
-                    <FormLabel htmlFor="message">{contactData.form.fields.message.label}</FormLabel>
+                    <FormLabel htmlFor="message">{t.contact.form.fields.message.label}</FormLabel>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder={contactData.form.fields.message.placeholder}
+                      placeholder={t.contact.form.fields.message.placeholder}
                       size="lg"
-                      rows={contactData.form.fields.message.rows}
+                      rows={t.contact.form.fields.message.rows}
                       borderRadius="xl"
                       resize="vertical"
                       _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px var(--chakra-colors-brand-500)' }}
@@ -204,11 +205,11 @@ export function ContactForm() {
                     size="lg"
                     width="full"
                     isLoading={isSubmitting}
-                    loadingText={contactData.form.submit.loading}
+                    loadingText={t.contact.form.submit.loading}
                     _hover={{ transform: 'translateY(-2px)', boxShadow: 'xl' }}
                     transition="all 0.2s"
                   >
-                    {contactData.form.submit.label}
+                    {t.contact.form.submit.label}
                   </Button>
                 </VStack>
               </Box>

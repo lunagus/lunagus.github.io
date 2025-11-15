@@ -2,10 +2,12 @@
 
 import { Box, Container, Text, HStack, Link, Icon } from '@chakra-ui/react'
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react'
+import { useI18n } from '@/lib/i18n/context'
 import contactData from '@/data/contact.json'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useI18n()
 
   const socialLinks = [
     { icon: Github, href: contactData.social.github, label: 'GitHub' },
@@ -15,11 +17,18 @@ export function Footer() {
   ]
 
   return (
-    <Box as="footer" py={8} borderTop="1px" borderColor="gray.700" mt={16}>
+    <Box
+      as="footer"
+      pt={{ base: 4, md: 8 }}
+      pb={{ base: 10, md: 8 }}
+      borderTop="1px"
+      borderColor="gray.700"
+      mt={16}
+    >
       <Container maxW="1200px">
         <HStack justify="space-between" flexWrap="wrap" spacing={4}>
           <Text fontSize="sm" color="gray.500">
-            © {currentYear} Agustin Luna. All rights reserved.
+            {t.common.copyright.replace('{{year}}', currentYear.toString())}
           </Text>
           <HStack spacing={4}>
             {socialLinks.map((social) => (

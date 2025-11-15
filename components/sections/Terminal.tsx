@@ -17,8 +17,10 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { parseCommand, getAutocomplete } from "@/lib/terminal/parser";
 import { fadeInUp } from "@/lib/animations";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { useI18n } from "@/lib/i18n/context";
 
 export function Terminal() {
+  const { t } = useI18n();
   const bg = useColorModeValue("gray.900", "gray.800");
   const promptColor = useColorModeValue("blue.400", "blue.300");
   const outputColor = useColorModeValue("green.400", "green.300");
@@ -120,7 +122,7 @@ export function Terminal() {
     "",
     "💡 Type 'help' to explore my portfolio commands",
     "   • View projects, skills, experience, and more",
-    "   • Try 'whoami', 'uptime', or 'projects --view=SongSeek'",
+    "   • Try 'whoami', 'socials', or 'skills --level'",
     "   • Press Tab to autocomplete commands",
     "",
   ], []);
@@ -249,7 +251,6 @@ export function Terminal() {
         "   • whoami               • Display my info", 
         "   • projects             • List my projects",
         "   • skills --level       • Show skill levels",
-        "   • projects --view=SongSeek • Detailed project view",
         "",
         "💡 Type 'help' for complete command list and usage!"
       ];
@@ -384,8 +385,8 @@ export function Terminal() {
             variants={fadeInUp}
           >
             <SectionTitle 
-              title="About Me"
-              subtitle="An interactive terminal experience showcasing my professional journey"
+              title={t.about.title}
+              subtitle={t.about.subtitle}
             />
           </motion.div>
           

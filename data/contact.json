@@ -1,35 +1,4 @@
 {
-  "title": "Get In Touch",
-  "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!",
-  "form": {
-    "fields": {
-      "name": {
-        "label": "Name",
-        "placeholder": "Your name",
-        "required": true
-      },
-      "email": {
-        "label": "Email",
-        "placeholder": "your.email@example.com",
-        "required": true
-      },
-      "subject": {
-        "label": "Subject",
-        "placeholder": "Project Inquiry",
-        "required": false
-      },
-      "message": {
-        "label": "Message",
-        "placeholder": "Your message...",
-        "required": true,
-        "rows": 6
-      }
-    },
-    "submit": {
-      "label": "Send Message",
-      "loading": "Sending..."
-    }
-  },
   "social": {
     "github": "https://github.com/lunagus",
     "linkedin": "https://www.linkedin.com/in/agustin-luna-68a149375/",

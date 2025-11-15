@@ -1,0 +1,182 @@
+{
+  "title": "Skills & Technologies",
+  "description": "The core technologies I use to architect and build high-performance software",
+  "categories": [
+    {
+      "category": "Programming Languages",
+      "description": "Fundamental languages for full-stack logic and data interaction",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "Expert",
+          "description": "Backend development, scripting, automation, data processing"
+        },
+        {
+          "name": "JavaScript",
+          "level": "Expert", 
+          "description": "ES6+, async/await, modern JavaScript features, DOM manipulation"
+        },
+        {
+          "name": "SQL",
+          "level": "Expert",
+          "description": "Query optimization, database design, complex joins, migrations"
+        },
+        {
+          "name": "HTML5",
+          "level": "Intermediate",
+          "description": "Semantic markup, accessibility, modern HTML features"
+        },
+        {
+          "name": "CSS3",
+          "level": "Intermediate",
+          "description": "Flexbox, Grid, animations, responsive design"
+        }
+      ]
+    },
+    {
+      "category": "Frontend",
+      "description": "Building interactive, responsive user interfaces with modern tools",
+      "skills": [
+        {
+          "name": "React",
+          "level": "Expert",
+          "description": "Hooks, Context API, component architecture, performance optimization"
+        },
+        {
+          "name": "TypeScript",
+          "level": "Expert",
+          "description": "Type safety, interfaces, generics, advanced type patterns"
+        },
+        {
+          "name": "Next.js",
+          "level": "Intermediate",
+          "description": "App Router, Server Components, static generation, API routes"
+        },
+        {
+          "name": "TailwindCSS",
+          "level": "Intermediate",
+          "description": "Utility-first CSS, responsive design, custom configurations"
+        },
+        {
+          "name": "Framer Motion",
+          "level": "Familiar",
+          "description": "Animations, gestures, physics-based interactions, UI transitions"
+        }
+      ]
+    },
+    {
+      "category": "Backend & APIs",
+      "description": "Building robust server-side applications and RESTful APIs",
+      "skills": [
+        {
+          "name": "Django",
+          "level": "Expert",
+          "description": "REST Framework, authentication, ORM, middleware, admin panel"
+        },
+        {
+          "name": "REST APIs",
+          "level": "Expert",
+          "description": "Design, implementation, documentation, authentication (JWT, OAuth)"
+        },
+        {
+          "name": "JWT",
+          "level": "Expert",
+          "description": "JSON Web Tokens for authentication, API security, token management"
+        },
+        {
+          "name": "Postman",
+          "level": "Intermediate",
+          "description": "API testing, documentation, collections, automated testing workflows"
+        },
+        {
+          "name": "Express",
+          "level": "Familiar",
+          "description": "Routing, middleware, error handling, Server-Sent Events"
+        },
+        {
+          "name": "Prisma",
+          "level": "Familiar",
+          "description": "Modern ORM for TypeScript, type-safe database access, migrations"
+        }
+      ]
+    },
+    {
+      "category": "Databases & Storage",
+      "description": "Designing and managing efficient data storage solutions",
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "level": "Expert",
+          "description": "Schema design, queries, relationships, migrations, performance tuning"
+        },
+        {
+          "name": "SQLite",
+          "level": "Intermediate",
+          "description": "Lightweight database for development and small applications"
+        },
+        {
+          "name": "MongoDB",
+          "level": "Familiar",
+          "description": "Document storage, aggregation, indexing, NoSQL patterns"
+        },
+        {
+          "name": "Redis",
+          "level": "Familiar",
+          "description": "In-memory caching, session storage, pub/sub, performance optimization"
+        }
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "description": "Streamlining development workflows and deployment processes",
+      "skills": [
+        {
+          "name": "Git",
+          "level": "Expert",
+          "description": "Version control, branching strategies, collaboration, conflict resolution"
+        },
+        {
+          "name": "GitHub Actions",
+          "level": "Expert",
+          "description": "CI/CD pipelines, automated testing, deployments, workflow orchestration"
+        },
+        {
+          "name": "VS Code",
+          "level": "Expert",
+          "description": "Development environment, extensions, debugging, productivity workflows"
+        },
+        {
+          "name": "Linux",
+          "level": "Expert",
+          "description": "System administration, shell scripting, server management, performance monitoring"
+        },
+        {
+          "name": "Docker",
+          "level": "Intermediate",
+          "description": "Containerization, Docker Compose, image optimization, multi-stage builds"
+        },
+        {
+          "name": "Nginx",
+          "level": "Intermediate",
+          "description": "Reverse proxy, load balancing, static file serving, SSL termination"
+        }
+      ]
+    },
+    {
+      "category": "Languages",
+      "description": "Communication and collaboration across global teams",
+      "skills": [
+        {
+          "name": "Español",
+          "level": "Native",
+          "description": "Native speaker - full professional proficiency"
+        },
+        {
+          "name": "English",
+          "level": "Fluent",
+          "description": "Fluent speaker - professional communication and technical documentation"
+        }
+      ]
+    }
+  ]
+}

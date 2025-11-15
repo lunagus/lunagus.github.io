@@ -1,0 +1,173 @@
+{
+  "hero": {
+    "greeting": "Bienvenid@, mi nombre es",
+    "name": "Agustin Luna",
+    "title": "Desarrollador de Software",
+    "description": "Apasionado por la tecnología y el aprendizaje continuo, me especializo en diseñar y construir software limpio, escalable y confiable.",
+    "cta": {
+      "primary": {
+        "label": "Descargar CV",
+        "action": "download-cv"
+      },
+      "secondary": {
+        "label": "Contactarme",
+        "action": "scroll-to-contact"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "Siempre estoy dispuesto a discutir nuevos proyectos, ideas u oportunidades. ¡No dudes en contactarme!",
+    "form": {
+      "fields": {
+        "name": {
+          "label": "Nombre",
+          "placeholder": "Tu nombre",
+          "required": true
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "tu.email@ejemplo.com",
+          "required": true
+        },
+        "subject": {
+          "label": "Asunto",
+          "placeholder": "Consulta de Proyecto",
+          "required": false
+        },
+        "message": {
+          "label": "Mensaje",
+          "placeholder": "Tu mensaje...",
+          "required": true,
+          "rows": 6
+        }
+      },
+      "submit": {
+        "label": "Enviar Mensaje",
+        "loading": "Enviando..."
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades y Tecnologías",
+    "description": "Las herramientas que utilizo para diseñar software de alto rendimiento",
+    "categories": {
+      "programmingLanguages": {
+        "title": "Lenguajes de Programación",
+        "description": "Lenguajes fundamentales para lógica full-stack e interacción de datos"
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Construcción de interfaces interactivas, modernas, accesibles y altamente responsivas"
+      },
+      "backend": {
+        "title": "Backend & APIs",
+        "description": "Arquitectura del lado del servidor, diseño de APIs y procesamiento eficiente"
+      },
+      "databases": {
+        "title": "Bases de Datos & Almacenamiento",
+        "description": "Modelado y gestionado de soluciones eficientes de almacenamiento de datos"
+      },
+      "devops": {
+        "title": "DevOps & Herramientas",
+        "description": "Automatización, CI/CD y herramientas para flujos de trabajo modernos"
+      },
+      "languages": {
+        "title": "Idiomas",
+        "description": "Comunicación y colaboración efectiva en entornos globales"
+      }
+    },
+    "descriptions": {
+      "Python": "Desarrollo backend, scripting, automatización, procesamiento de datos",
+      "JavaScript": "ES6+, async/await, características modernas de JavaScript, manipulación del DOM",
+      "SQL": "Optimización de consultas, diseño de bases de datos, joins complejos, migraciones",
+      "HTML5": "Markup semántico, accesibilidad, características modernas de HTML",
+      "CSS3": "Flexbox, Grid, animaciones, diseño responsivo",
+      "Java": "Programación orientada a objetos, ecosistema Spring, APIs REST, servicios backend y aplicaciones empresariales",
+      "React": "Hooks, Context API, arquitectura de componentes, optimización de rendimiento",
+      "TypeScript": "Seguridad de tipos, interfaces, generics, patrones de tipos avanzados",
+      "Next.js": "SSR/SSG, routing, API routes, optimización de imágenes",
+      "TailwindCSS": "Diseño utilitario, componentes personalizados, temas, responsive design",
+      "Framer Motion": "Animaciones complejas, gestos, variantes, optimización de rendimiento",
+      "Django": "MVC, ORM, autenticación, middleware, REST framework",
+      "REST APIs": "Diseño de APIs, HTTP status codes, autenticación, documentación",
+      "JWT": "Tokens de acceso, refresh tokens, seguridad, implementación",
+      "Postman": "Testing de APIs, colecciones, automatización, documentación",
+      "Express": "Middleware, routing, manejo de errores, patrones de diseño",
+      "Prisma": "ORM type-safe, migraciones, relaciones, optimización de consultas",
+      "PostgreSQL": "Consultas complejas, optimización, índices, replicación",
+      "SQLite": "Bases de datos ligeras, consultas, migraciones, desarrollo local",
+      "MongoDB": "NoSQL, agregaciones, indexación, escalabilidad horizontal",
+      "Redis": "Caching, pub/sub, estructuras de datos, optimización de rendimiento",
+      "Supabase": "Backend como servicio basado en Postgres, autenticación, almacenamiento y APIs en tiempo real",
+      "Git": "Control de versiones, branching, merging, estrategias de flujo de trabajo",
+      "GitHub Actions": "CI/CD, workflows, automatización, despliegue",
+      "VS Code": "Extensiones, debugging, atajos, personalización",
+      "Linux": "Línea de comandos, scripting, administración del sistema, redes",
+      "Docker": "Contenedores, Docker Compose, optimización de imágenes, orquestación",
+      "Nginx": "Servidor web, reverse proxy, load balancing, configuración",
+      "Spanish": "Nativo, comunicación profesional, vocabulario técnico",
+      "English": "Bilingüe, documentación técnica, colaboración global"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "viewDetails": "Ver Detalles",
+    "tryItLive": "Probar en vivo",
+    "featured": "Destacado",
+    "descriptions": {
+      "1": {
+        "title": "SongSeek",
+        "description": "Plataforma de migración de música full-stack para convertir listas de reproducción entre Spotify, YouTube Music, Deezer, Apple Music y más.",
+        "longDescription": "SongSeek es una plataforma de migración de música completa que permite a los usuarios convertir listas de reproducción entre los principales servicios de streaming. Construida con React y Express, cuenta con algoritmos de coincidencia inteligentes, autenticación OAuth, actualizaciones de estado en tiempo real a través de Server-Sent Events, búsqueda y creación de listas de reproducción a través de APIs oficiales, y una interfaz moderna optimizada para móviles. La plataforma soporta conversión bidireccional entre Spotify, YouTube Music, Deezer, Apple Music, Tidal y Amazon Music, con opciones de corrección manual para pistas no coincidentes y un panel de administración con análisis de conversiones."
+      },
+      "2": {
+        "title": "PuntoCultura",
+        "description": "Plataforma web full-stack para gestionar y mostrar eventos e instituciones culturales para la Subsecretaría de Cultura de Santiago del Estero.",
+        "longDescription": "PuntoCultura es una plataforma web integral desarrollada para la Subsecretaría de Cultura de Santiago del Estero. Construida con Django REST Framework y JavaScript vanilla, cuenta con control de acceso basado en roles, autenticación JWT, APIs RESTful, un panel de administración avanzado con operaciones CRUD, vistas de calendario con FullCalendar, sistema de filtrado avanzado, middleware de protección contra inyección SQL, y una interfaz moderna y responsiva. La plataforma permite a administradores y editores gestionar eventos culturales, instituciones y contenido con soporte para borradores y flujos de publicación."
+      },
+      "3": {
+        "title": "TuPDF",
+        "description": "Kit de herramientas PDF de código abierto y ligero para navegadores modernos con procesamiento del lado del cliente para privacidad y velocidad.",
+        "longDescription": "TuPDF es un kit de herramientas PDF completo que se ejecuta completamente en el navegador, garantizando privacidad y cero dependencias del servidor. Construido con Next.js, React, TypeScript y MUI, cuenta con división de PDF (extraer páginas específicas o rangos), fusión de PDF (combinar múltiples archivos), organización de páginas (reorganizar, rotar, eliminar páginas con cuadrícula visual), conversión de página a imagen (exportación PNG/JPG), optimización y compresión de PDF, internacionalización completa (8 idiomas), interfaz moderna responsiva con modo oscuro, y procesamiento 100% del lado del cliente para máxima privacidad. Todas las operaciones usan Web APIs y se ejecutan localmente en el navegador."
+      },
+      "4": {
+        "title": "Ahorcado",
+        "description": "Juego del ahorcado moderno construido con Next.js, TypeScript y TailwindCSS con soporte multiidioma y generación dinámica de palabras.",
+        "longDescription": "Ahorcado es una implementación moderna del juego clásico del ahorcado, featuring una hermosa interfaz inspirada en Material Design. Construido con Next.js 15, TypeScript y TailwindCSS, incluye soporte multiidioma (español e inglés), generación dinámica de palabras desde la API de Datamuse, múltiples niveles de dificultad (Fácil, Intermedio, Difícil), soporte de modo oscuro, diseño responsivo, soporte completo de entrada de teclado, sistema de seguimiento de puntuación, y animaciones suaves. El juego proporciona una experiencia de usuario atractiva con retroalimentación en tiempo real y controles intuitivos."
+      },
+      "5": {
+        "title": "Clipper",
+        "description": "Aplicación de escritorio minimalista para recortar, codificar y subir videos usando FFmpeg con una GUI intuitiva.",
+        "longDescription": "Clipper es una aplicación GUI moderna y accesible para procesamiento de video construida con Python y Tkinter. Proporciona una interfaz intuitiva para recorte de video con línea de tiempo interactiva, preajustes de codificación (Muy Rápido a Muy Lento), opciones de codificación avanzadas (códec personalizado, CRF, FPS, resolución, velocidad), múltiples formatos de salida (MP4, MKV, WebM), funcionalidad de subida integrada a servicios de alojamiento de archivos, actualizaciones de progreso en tiempo real, procesamiento con hilos para evitar congelamientos de la UI, y un diseño oscuro inspirado en Material. Perfecto para procesar rápidamente archivos de video de películas, capturas de juego y programas de TV."
+      },
+      "6": {
+        "title": "Userscripts",
+        "description": "Una colección de userscripts ligeros para mejorar la experiencia de navegación web con controles de teclado, limpieza de URL y utilidades de navegación.",
+        "longDescription": "Una colección de userscripts ligeros para mejorar la experiencia de navegación web con controles de teclado, limpieza de URL y utilidades de navegación."
+      }
+    }
+  },
+  "about": {
+    "title": "Acerca de",
+    "subtitle": "Una experiencia de terminal interactiva que muestra mi trayectoria profesional"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "terminal": "Terminal"
+  },
+  "common": {
+    "viewProject": "Ver Proyecto",
+    "viewCode": "Ver Código",
+    "featured": "Destacado",
+    "technologies": "Tecnologías",
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "close": "Cerrar",
+    "copyright": "© {{year}} Agustin Luna. Todos los derechos reservados."
+  }
+}

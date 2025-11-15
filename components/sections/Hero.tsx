@@ -16,11 +16,12 @@ import { useEffect, useState } from 'react'
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations'
 import { downloadFile, scrollToSection } from '@/lib/utils'
 import { trackCVDownload } from '@/lib/analytics'
-import heroData from '@/data/hero.json'
+import { useI18n } from '@/lib/i18n/context'
 
 export function Hero() {
   const [mounted, setMounted] = useState(false)
   const accentColor = useColorModeValue('brand.600', 'brand.400')
+  const { t } = useI18n()
 
   useEffect(() => {
     setMounted(true)
@@ -66,7 +67,7 @@ export function Hero() {
               fontWeight="600"
               mb={1}
             >
-              {heroData.greeting}
+              {t.hero.greeting}
             </Text>
           </motion.div>
 
@@ -78,7 +79,7 @@ export function Hero() {
               lineHeight="1.1"
               mb={2}
             >
-              {heroData.name}
+              {t.hero.name}
             </Heading>
           </motion.div>
 
@@ -90,13 +91,13 @@ export function Hero() {
               color="gray.500"
               mb={4}
             >
-              {heroData.title}
+              {t.hero.title}
             </Heading>
           </motion.div>
 
           <motion.div variants={staggerItem}>
             <Text fontSize={{ base: 'lg', md: 'xl' }} color="gray.400" maxW="600px" mb={8}>
-              {heroData.description}
+              {t.hero.description}
             </Text>
           </motion.div>
 
@@ -109,7 +110,7 @@ export function Hero() {
                 _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                 transition="all 0.2s"
               >
-                {heroData.cta.primary.label}
+                {t.hero.cta.primary.label}
               </Button>
               <Button
                 size="lg"
@@ -118,7 +119,7 @@ export function Hero() {
                 _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                 transition="all 0.2s"
               >
-                {heroData.cta.secondary.label}
+                {t.hero.cta.secondary.label}
               </Button>
             </HStack>
           </motion.div>

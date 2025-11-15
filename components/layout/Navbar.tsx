@@ -19,20 +19,15 @@ import {
   Button,
   Show,
   Hide,
+  Text,
+  Divider,
 } from '@chakra-ui/react'
-import { Moon, Sun, Menu, Home, Code, Briefcase, Mail, Info } from 'lucide-react'
+import { Moon, Sun, Menu, Home, Briefcase, Code, Info, Mail } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { fadeInLeft } from '@/lib/animations'
 import { scrollToSection, throttle } from '@/lib/utils'
-
-const navItems = [
-  { label: 'Home', href: '#home', icon: Home },
-  { label: 'Projects', href: '#projects', icon: Briefcase },
-  { label: 'Skills', href: '#skills', icon: Code },
-  { label: 'About', href: '#about', icon: Info },
-  { label: 'Contact', href: '#contact', icon: Mail },
-]
+import { useI18n } from '@/lib/i18n/context'
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -40,8 +35,17 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
   const [scrolled, setScrolled] = useState(false)
   const { scrollY } = useScroll()
+  const { locale, changeLocale, t } = useI18n()
   const bg = useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(26, 32, 44, 0.8)')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
+
+  const navItems = [
+    { label: t.navigation.home, href: '#home', icon: Home },
+    { label: t.navigation.projects, href: '#projects', icon: Briefcase },
+    { label: t.navigation.skills, href: '#skills', icon: Code },
+    { label: t.navigation.about || 'About', href: '#about', icon: Info },
+    { label: t.navigation.contact, href: '#contact', icon: Mail },
+  ]
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrolled(latest > 50)
@@ -188,6 +192,91 @@ export function Navbar() {
           </HStack>
 
           <HStack spacing={2}>
+            <Box
+              position="relative"
+              bg={useColorModeValue('gray.100', 'gray.700')}
+              borderRadius="full"
+              minW="112px"
+              h="40px"
+              px="4px"
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              boxShadow={useColorModeValue('none', 'inset 0 2px 4px rgba(0, 0, 0, 0.2)')}
+            >
+              {/* Sliding thumb */}
+              <motion.div
+                style={{
+                  position: 'absolute',
+                  top: '4px',
+                  left: locale === 'en' ? '4px' : '56px',
+                  width: '52px',
+                  height: '32px',
+                  borderRadius: '16px',
+                  backgroundColor: colorMode === 'light' ? 'white' : 'gray.700',
+                  boxShadow:
+                    colorMode === 'light'
+                      ? '0 2px 8px rgba(0, 0, 0, 0.15)'
+                      : '0 2px 8px rgba(0, 0, 0, 0.4)',
+                }}
+                animate={{
+                  left: locale === 'en' ? '4px' : '56px',
+                  backgroundColor: colorMode === 'light' ? 'white' : 'gray.700',
+                  boxShadow: colorMode === 'light'
+                    ? '0 2px 8px rgba(0, 0, 0, 0.15)'
+                    : '0 2px 8px rgba(0, 0, 0, 0.4)',
+                }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 350,
+                  damping: 26,
+                }}
+                key={`thumb-${colorMode}`}
+              />
+
+              {/* Buttons */}
+              <HStack spacing={0} position="relative" zIndex={1} w="100%" justify="space-between">
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  onClick={() => changeLocale('en')}
+                  fontSize="sm"
+                  fontWeight="600"
+                  w="52px"
+                  h="32px"
+                  p={0}
+                  borderRadius="full"
+                  color={
+                    locale === 'en'
+                      ? (colorMode === 'light' ? 'black' : 'white')
+                      : (colorMode === 'light' ? 'gray.600' : 'gray.300')
+                  }
+                  _hover={{ bg: 'transparent' }}
+                >
+                  EN
+                </Button>
+
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  onClick={() => changeLocale('es')}
+                  fontSize="sm"
+                  fontWeight="600"
+                  w="52px"
+                  h="32px"
+                  p={0}
+                  borderRadius="full"
+                  color={
+                    locale === 'es'
+                      ? (colorMode === 'light' ? 'black' : 'white')
+                      : (colorMode === 'light' ? 'gray.600' : 'gray.300')
+                  }
+                  _hover={{ bg: 'transparent' }}
+                >
+                  ES
+                </Button>
+              </HStack>
+            </Box>
             <IconButton
               aria-label="Toggle color mode"
               icon={colorMode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
@@ -223,10 +312,10 @@ export function Navbar() {
           boxShadow="0 -4px 6px rgba(0, 0, 0, 0.1)"
         >
           <HStack
-            justify="space-around"
+            justify="space-between"
             py={2}
-            px={4}
-            spacing={0}
+            px={1.5}
+            spacing={1}
           >
             {navItems.map((item) => {
               const isActive = activeSection === item.href.replace('#', '')
@@ -241,12 +330,21 @@ export function Navbar() {
                   flexDirection="column"
                   height="auto"
                   py={2}
-                  px={3}
-                  minW="auto"
+                  px={2}
+                  minW="0" // Allow buttons to shrink
+                  flex={1} // Equal distribution
                   _hover={{ bg: 'transparent', color: 'brand.500' }}
                 >
-                  <Icon size={20} />
-                  <Box fontSize="xs" mt={1}>
+                  <Icon size={18} />
+                  <Box 
+                    fontSize="10px" 
+                    mt={1}
+                    textAlign="center"
+                    lineHeight="tight"
+                    noOfLines={2} // Allow text to wrap to 2 lines
+                    wordBreak="break-word"
+                    maxW="60px" // Prevent excessive width
+                  >
                     {item.label}
                   </Box>
                   {isActive && (
@@ -255,7 +353,7 @@ export function Navbar() {
                       top={0}
                       left="50%"
                       transform="translateX(-50%)"
-                      width="40px"
+                      width="30px"
                       height="2px"
                       borderRadius="full"
                       overflow="hidden"
@@ -312,7 +410,97 @@ export function Navbar() {
           <DrawerCloseButton />
           <DrawerHeader>Navigation</DrawerHeader>
           <DrawerBody>
-            <VStack spacing={2} align="stretch" pt={4}>
+            <VStack spacing={4} align="stretch" pt={4}>
+              {/* Mobile Language Toggle */}
+              <Box
+                position="relative"
+                bg={useColorModeValue('gray.100', 'gray.700')}
+                borderRadius="full"
+                minW="112px"
+                h="40px"
+                px="4px"
+                display="flex"
+                alignItems="center"
+                justifyContent="space-between"
+                mx="auto"
+                boxShadow={useColorModeValue('none', 'inset 0 2px 4px rgba(0, 0, 0, 0.2)')}
+              >
+                {/* Sliding thumb */}
+                <motion.div
+                  style={{
+                    position: 'absolute',
+                    top: '4px',
+                    left: locale === 'en' ? '4px' : '56px',
+                    width: '52px',
+                    height: '32px',
+                    borderRadius: '16px',
+                    backgroundColor: colorMode === 'light' ? 'white' : 'gray.700',
+                    boxShadow:
+                      colorMode === 'light'
+                        ? '0 2px 8px rgba(0, 0, 0, 0.15)'
+                        : '0 2px 8px rgba(0, 0, 0, 0.4)',
+                  }}
+                  animate={{
+                    left: locale === 'en' ? '4px' : '56px',
+                    backgroundColor: colorMode === 'light' ? 'white' : 'gray.700',
+                    boxShadow: colorMode === 'light'
+                      ? '0 2px 8px rgba(0, 0, 0, 0.15)'
+                      : '0 2px 8px rgba(0, 0, 0, 0.4)',
+                  }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 350,
+                    damping: 26,
+                  }}
+                  key={`mobile-thumb-${colorMode}`}
+                />
+
+                {/* Buttons */}
+                <HStack spacing={0} position="relative" zIndex={1} w="100%" justify="space-between">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => changeLocale('en')}
+                    fontSize="sm"
+                    fontWeight="600"
+                    w="52px"
+                    h="32px"
+                    p={0}
+                    borderRadius="full"
+                    color={
+                      locale === 'en'
+                        ? (colorMode === 'light' ? 'black' : 'white')
+                        : (colorMode === 'light' ? 'gray.600' : 'gray.300')
+                    }
+                    _hover={{ bg: 'transparent' }}
+                  >
+                    EN
+                  </Button>
+
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => changeLocale('es')}
+                    fontSize="sm"
+                    fontWeight="600"
+                    w="52px"
+                    h="32px"
+                    p={0}
+                    borderRadius="full"
+                    color={
+                      locale === 'es'
+                        ? (colorMode === 'light' ? 'black' : 'white')
+                        : (colorMode === 'light' ? 'gray.600' : 'gray.300')
+                    }
+                    _hover={{ bg: 'transparent' }}
+                  >
+                    ES
+                  </Button>
+                </HStack>
+              </Box>
+
+              <Divider />
+              
               {navItems.map((item) => {
                 const isActive = activeSection === item.href.replace('#', '')
                 const Icon = item.icon
