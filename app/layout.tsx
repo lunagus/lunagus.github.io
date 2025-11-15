@@ -3,13 +3,13 @@ import { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Agustin Luna | Full-Stack Developer Portfolio',
+  title: 'Agustin Luna | Portfolio',
   description: 'Passionate Software Developer with a strong foundation in modern web development technologies. Experienced in building scalable web applications using React, Django, Node.js, and more.',
   keywords: ['developer', 'portfolio', 'web development', 'full-stack', 'React', 'Django', 'Node.js', 'JavaScript', 'Python'],
   authors: [{ name: 'Agustin Luna' }],
   creator: 'Agustin Luna',
   openGraph: {
-    title: 'Agustin Luna | Full-Stack Developer Portfolio',
+    title: 'Agustin Luna | Portfolio',
     description: 'Passionate Software Developer with a strong foundation in modern web development technologies',
     type: 'website',
     locale: 'en_US',

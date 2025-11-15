@@ -337,17 +337,19 @@ export function ProjectModal({ project, allProjects, isOpen, onClose, onProjectC
                     >
                       <VStack align="stretch" spacing={3}>
                         <Heading as="h4" fontSize="md" fontWeight="600">
-                          {script.name}
+                          {locale === 'es' && script.name_es ? script.name_es : script.name}
                         </Heading>
                         <Text fontSize="sm" color="gray.400">
-                          {script.description}
+                          {locale === 'es' && script.description_es ? script.description_es : script.description}
                         </Text>
                         <VStack align="flex-start" spacing={1} mb={2}>
-                          {script.features.map((feature, fIdx) => (
-                            <Text key={fIdx} fontSize="xs" color="gray.500">
-                              • {feature}
-                            </Text>
-                          ))}
+                          {(locale === 'es' && script.features_es ? script.features_es : script.features).map(
+                            (feature, fIdx) => (
+                              <Text key={fIdx} fontSize="xs" color="gray.500">
+                                • {feature}
+                              </Text>
+                            )
+                          )}
                         </VStack>
                         <Button
                           leftIcon={<Github size={16} />}

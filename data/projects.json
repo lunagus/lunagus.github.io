@@ -19,13 +19,11 @@
     "technologies": ["Django", "Django REST Framework", "PostgreSQL", "JavaScript", "JWT", "HTML5", "CSS3", "FullCalendar"],
     "tags": ["Full-Stack"],
     "githubUrl": "https://github.com/lunagus/PuntoCultura",
-    "demoUrl": "https://puntocultura.vercel.app",
+    "demoUrl": "https://puntocultura.netlify.app/eventos",
     "screenshots": [
       "/screenshots/puntocultura/puntocultura-1.webp",
       "/screenshots/puntocultura/puntocultura-2.webp",
-      "/screenshots/puntocultura/puntocultura-3.webp",
-      "/screenshots/puntocultura/puntocultura-4.webp",
-      "/screenshots/puntocultura/puntocultura-5.webp"
+      "/screenshots/puntocultura/puntocultura-3.webp"
     ],
     "featured": false
   },
@@ -38,9 +36,7 @@
     "screenshots": [
       "/screenshots/tupdf/tupdf-1.webp",
       "/screenshots/tupdf/tupdf-2.webp",
-      "/screenshots/tupdf/tupdf-3.webp",
-      "/screenshots/tupdf/tupdf-4.webp",
-      "/screenshots/tupdf/tupdf-5.webp"
+      "/screenshots/tupdf/tupdf-3.webp"
     ],
     "featured": false
   },
@@ -49,12 +45,11 @@
     "technologies": ["Next.js", "TypeScript", "TailwindCSS", "Datamuse API"],
     "tags": ["Frontend", "Game"],
     "githubUrl": "https://github.com/lunagus/Ahorcado",
-    "demoUrl": "https://ahorcado.vercel.app",
+    "demoUrl": "https://ahorcado-pi.vercel.app",
     "screenshots": [
       "/screenshots/ahorcado/ahorcado-1.webp",
       "/screenshots/ahorcado/ahorcado-2.webp",
-      "/screenshots/ahorcado/ahorcado-3.webp",
-      "/screenshots/ahorcado/ahorcado-4.webp"
+      "/screenshots/ahorcado/ahorcado-3.webp"
     ],
     "featured": false
   },
@@ -65,24 +60,78 @@
     "githubUrl": "https://github.com/lunagus/Clipper",
     "demoUrl": "",
     "screenshots": [
-      "/screenshots/clipper/clipper-1.webp",
-      "/screenshots/clipper/clipper-2.webp",
-      "/screenshots/clipper/clipper-3.webp",
-      "/screenshots/clipper/clipper-4.webp"
+      "/screenshots/clipper/clipper-1.webp"
     ],
     "featured": false
   },
   {
     "id": "6",
-    "technologies": ["JavaScript", "CSS", "HTML"],
-    "tags": ["Browser", "Utilities"],
-    "githubUrl": "https://github.com/lunagus/Userscripts",
-    "demoUrl": "https://lunagus.github.io/Userscripts/",
+    "technologies": ["JavaScript", "Userscripts", "Tampermonkey", "DOM Manipulation"],
+    "tags": ["Browser Extension", "JavaScript", "Utilities"],
+    "githubUrl": "https://github.com/lunagus",
+    "demoUrl": null,
     "screenshots": [
-      "/screenshots/userscripts/userscripts-1.webp",
-      "/screenshots/userscripts/userscripts-2.webp",
-      "/screenshots/userscripts/userscripts-3.webp"
+      "/screenshots/userscripts/userscripts-1.webp"
     ],
-    "featured": false
+    "featured": false,
+    "userscripts": [
+      {
+        "name": "HTML5 Video Speed Controls",
+        "description": "Keyboard shortcuts for playback speed and frame stepping on HTML5 videos",
+        "githubUrl": "https://github.com/lunagus/html5-video-speed-control",
+        "features": [
+          "Speed control (X/C/Z keys)",
+          "Frame-by-frame navigation (Q/E keys)",
+          "Smart video detection",
+          "Tooltip overlay"
+        ],
+        "name_es": "Controles de velocidad para videos HTML5",
+        "description_es": "Atajos de teclado para cambiar la velocidad de reproducción y avanzar cuadro por cuadro en videos HTML5",
+        "features_es": [
+          "Control de velocidad (teclas X/C/Z)",
+          "Navegación cuadro por cuadro (teclas Q/E)",
+          "Detección inteligente de videos",
+          "Superposición con indicador de velocidad"
+        ]
+      },
+      {
+        "name": "Reddit Translation Remover",
+        "description": "Automatically removes Reddit's translation parameters from URLs",
+        "githubUrl": "https://github.com/lunagus/remove-reddit-autotranslation",
+        "features": [
+          "Removes ?tl=xx-xxx parameters",
+          "Works on all Reddit subpages",
+          "Seamless redirects",
+          "URL change monitoring"
+        ],
+        "name_es": "Removedor de traducciones automáticas de Reddit",
+        "description_es": "Elimina automáticamente los parámetros de traducción de Reddit en las URLs",
+        "features_es": [
+          "Elimina parámetros ?tl=xx-xxx",
+          "Funciona en todas las subpáginas de Reddit",
+          "Redirecciones transparentes",
+          "Monitoreo de cambios en la URL"
+        ]
+      },
+      {
+        "name": "Top and Down Buttons",
+        "description": "Smooth scroll-to-top and scroll-to-bottom buttons for any webpage",
+        "githubUrl": "https://github.com/lunagus/top-and-down-buttons",
+        "features": [
+          "Click to scroll",
+          "Hover for continuous scroll",
+          "Auto-hide at top/bottom",
+          "Customizable configuration"
+        ],
+        "name_es": "Botones para ir arriba y abajo",
+        "description_es": "Botones con desplazamiento suave para ir al inicio o al final de cualquier página web",
+        "features_es": [
+          "Clic para desplazarse",
+          "Mantener el cursor para desplazamiento continuo",
+          "Auto-ocultado al llegar arriba/abajo",
+          "Configuración personalizable"
+        ]
+      }
+    ]
   }
 ]

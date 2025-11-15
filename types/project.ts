@@ -3,6 +3,9 @@ export interface Userscript {
   description: string
   githubUrl: string
   features: string[]
+  name_es?: string
+  description_es?: string
+  features_es?: string[]
 }
 
 export interface Project {
