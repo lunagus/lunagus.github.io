@@ -8,7 +8,13 @@
     "tags": ["Full-Stack", "API Integration", "Music"],
     "githubUrl": "https://github.com/lunagus/SongSeek",
     "demoUrl": "https://songseek.vercel.app",
-    "screenshots": [],
+    "screenshots": [
+      "/screenshots/songseek/songseek-1.webp",
+      "/screenshots/songseek/songseek-2.webp",
+      "/screenshots/songseek/songseek-3.webp",
+      "/screenshots/songseek/songseek-4.webp",
+      "/screenshots/songseek/songseek-5.webp"
+    ],
     "featured": true
   },
   {
@@ -20,7 +26,11 @@
     "tags": ["Full-Stack", "Django", "Government"],
     "githubUrl": "https://github.com/lunagus/PuntoCultura",
     "demoUrl": "https://puntocultura.netlify.app/eventos",
-    "screenshots": [],
+    "screenshots": [
+      "/screenshots/puntocultura/puntocultura-1.webp",
+      "/screenshots/puntocultura/puntocultura-2.webp",
+      "/screenshots/puntocultura/puntocultura-3.webp"
+    ],
     "featured": true
   },
   {
@@ -32,7 +42,11 @@
     "tags": ["Frontend", "PDF Tools", "Privacy"],
     "githubUrl": "https://github.com/lunagus/TuPDF",
     "demoUrl": "https://tupdf.vercel.app",
-    "screenshots": [],
+    "screenshots": [
+      "/screenshots/tupdf/tupdf-1.webp",
+      "/screenshots/tupdf/tupdf-2.webp",
+      "/screenshots/tupdf/tupdf-3.webp"
+    ],
     "featured": true
   },
   {
@@ -44,7 +58,11 @@
     "tags": ["Frontend", "Game", "Next.js"],
     "githubUrl": "https://github.com/lunagus/Ahorcado",
     "demoUrl": "https://ahorcado-pi.vercel.app",
-    "screenshots": [],
+    "screenshots": [
+      "/screenshots/ahorcado/ahorcado-1.webp",
+      "/screenshots/ahorcado/ahorcado-2.webp",
+      "/screenshots/ahorcado/ahorcado-3.webp"
+    ],
     "featured": false
   },
   {
@@ -56,7 +74,9 @@
     "tags": ["Desktop", "Video Processing", "Python"],
     "githubUrl": "https://github.com/lunagus/Clipper",
     "demoUrl": null,
-    "screenshots": [],
+    "screenshots": [
+      "/screenshots/clipper/clipper-1.webp"
+    ],
     "featured": false
   },
   {
@@ -68,7 +88,9 @@
     "tags": ["Browser Extension", "JavaScript", "Utilities"],
     "githubUrl": "https://github.com/lunagus",
     "demoUrl": null,
-    "screenshots": [],
+    "screenshots": [
+      "/screenshots/userscripts/userscripts-1.webp"
+    ],
     "featured": false,
     "userscripts": [
       {

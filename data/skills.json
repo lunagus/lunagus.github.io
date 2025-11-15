@@ -1,66 +1,66 @@
 {
   "title": "Skills & Technologies",
-  "description": "A comprehensive toolkit for building modern, scalable web applications and APIs",
+  "description": "The core technologies I use to architect and build high-performance software",
   "categories": [
     {
       "category": "Programming Languages",
-      "description": "Proficient in multiple languages for both frontend and backend development",
+      "description": "Fundamental languages for full-stack logic and data interaction",
       "skills": [
         {
-          "name": "JavaScript",
-          "level": "Advanced",
-          "description": "ES6+, async/await, modern JavaScript features"
-        },
-        {
-          "name": "TypeScript",
-          "level": "Advanced",
-          "description": "Type-safe development, interfaces, generics"
-        },
-        {
           "name": "Python",
-          "level": "Advanced",
-          "description": "Backend development, scripting, automation"
+          "level": "Expert",
+          "description": "Backend development, scripting, automation, data processing"
+        },
+        {
+          "name": "JavaScript",
+          "level": "Expert", 
+          "description": "ES6+, async/await, modern JavaScript features, DOM manipulation"
+        },
+        {
+          "name": "SQL",
+          "level": "Expert",
+          "description": "Query optimization, database design, complex joins, migrations"
         },
         {
           "name": "HTML5",
-          "level": "Expert",
+          "level": "Intermediate",
           "description": "Semantic markup, accessibility, modern HTML features"
         },
         {
           "name": "CSS3",
-          "level": "Expert",
-          "description": "Flexbox, Grid, animations, responsive design"
-        },
-        {
-          "name": "SQL",
           "level": "Intermediate",
-          "description": "Query optimization, database design, migrations"
+          "description": "Flexbox, Grid, animations, responsive design"
         }
       ]
     },
     {
-      "category": "Frontend Frameworks & Libraries",
+      "category": "Frontend",
       "description": "Building interactive, responsive user interfaces with modern tools",
       "skills": [
         {
           "name": "React",
-          "level": "Advanced",
+          "level": "Expert",
           "description": "Hooks, Context API, component architecture, performance optimization"
         },
         {
+          "name": "TypeScript",
+          "level": "Expert",
+          "description": "Type safety, interfaces, generics, advanced type patterns"
+        },
+        {
           "name": "Next.js",
-          "level": "Advanced",
+          "level": "Intermediate",
           "description": "App Router, Server Components, static generation, API routes"
         },
         {
           "name": "TailwindCSS",
-          "level": "Advanced",
+          "level": "Intermediate",
           "description": "Utility-first CSS, responsive design, custom configurations"
         },
         {
-          "name": "TypeScript",
-          "level": "Advanced",
-          "description": "Type safety, interfaces, type inference"
+          "name": "Framer Motion",
+          "level": "Familiar",
+          "description": "Animations, gestures, physics-based interactions, UI transitions"
         }
       ]
     },
@@ -70,23 +70,33 @@
       "skills": [
         {
           "name": "Django",
-          "level": "Advanced",
+          "level": "Expert",
           "description": "REST Framework, authentication, ORM, middleware, admin panel"
         },
         {
-          "name": "Node.js",
-          "level": "Intermediate",
-          "description": "Express.js, async operations, middleware, API development"
-        },
-        {
           "name": "REST APIs",
-          "level": "Advanced",
+          "level": "Expert",
           "description": "Design, implementation, documentation, authentication (JWT, OAuth)"
         },
         {
-          "name": "Express",
+          "name": "JWT",
+          "level": "Expert",
+          "description": "JSON Web Tokens for authentication, API security, token management"
+        },
+        {
+          "name": "Postman",
           "level": "Intermediate",
+          "description": "API testing, documentation, collections, automated testing workflows"
+        },
+        {
+          "name": "Express",
+          "level": "Familiar",
           "description": "Routing, middleware, error handling, Server-Sent Events"
+        },
+        {
+          "name": "Prisma",
+          "level": "Familiar",
+          "description": "Modern ORM for TypeScript, type-safe database access, migrations"
         }
       ]
     },
@@ -96,18 +106,23 @@
       "skills": [
         {
           "name": "PostgreSQL",
-          "level": "Intermediate",
-          "description": "Schema design, queries, relationships, migrations"
-        },
-        {
-          "name": "MongoDB",
-          "level": "Intermediate",
-          "description": "Document storage, aggregation, indexing"
+          "level": "Expert",
+          "description": "Schema design, queries, relationships, migrations, performance tuning"
         },
         {
           "name": "SQLite",
           "level": "Intermediate",
           "description": "Lightweight database for development and small applications"
+        },
+        {
+          "name": "MongoDB",
+          "level": "Familiar",
+          "description": "Document storage, aggregation, indexing, NoSQL patterns"
+        },
+        {
+          "name": "Redis",
+          "level": "Familiar",
+          "description": "In-memory caching, session storage, pub/sub, performance optimization"
         }
       ]
     },
@@ -117,38 +132,33 @@
       "skills": [
         {
           "name": "Git",
-          "level": "Advanced",
-          "description": "Version control, branching strategies, collaboration"
-        },
-        {
-          "name": "Docker",
-          "level": "Intermediate",
-          "description": "Containerization, Docker Compose, image optimization"
+          "level": "Expert",
+          "description": "Version control, branching strategies, collaboration, conflict resolution"
         },
         {
           "name": "GitHub Actions",
-          "level": "Intermediate",
-          "description": "CI/CD pipelines, automated testing, deployments"
-        },
-        {
-          "name": "Nginx",
-          "level": "Intermediate",
-          "description": "Reverse proxy, load balancing, static file serving"
-        },
-        {
-          "name": "Gunicorn",
-          "level": "Intermediate",
-          "description": "WSGI server for Python applications"
+          "level": "Expert",
+          "description": "CI/CD pipelines, automated testing, deployments, workflow orchestration"
         },
         {
           "name": "VS Code",
           "level": "Expert",
-          "description": "Development environment, extensions, debugging"
+          "description": "Development environment, extensions, debugging, productivity workflows"
         },
         {
           "name": "Linux",
+          "level": "Expert",
+          "description": "System administration, shell scripting, server management, performance monitoring"
+        },
+        {
+          "name": "Docker",
           "level": "Intermediate",
-          "description": "System administration, shell scripting, server management"
+          "description": "Containerization, Docker Compose, image optimization, multi-stage builds"
+        },
+        {
+          "name": "Nginx",
+          "level": "Intermediate",
+          "description": "Reverse proxy, load balancing, static file serving, SSL termination"
         }
       ]
     },

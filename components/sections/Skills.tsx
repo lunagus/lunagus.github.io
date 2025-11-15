@@ -17,12 +17,23 @@ import { staggerContainer, staggerItem, staggerFade, staggerFadeItem } from '@/l
 import skillsData from '@/data/skills.json'
 
 export function Skills() {
-  const levelColors: Record<string, string> = {
-    Expert: 'green',
-    Advanced: 'blue',
-    Intermediate: 'yellow',
-    Beginner: 'gray',
-  }
+  // Proficiency-based color scheme
+  const getProficiencyBadge = (level: string) => {
+    switch (level) {
+      case "Expert":
+        return "blue";
+      case "Intermediate":
+        return "green";
+      case "Familiar":
+        return "yellow";
+      case "Native":
+        return "blue";
+      case "Fluent":
+        return "green";
+      default:
+        return "gray";
+    }
+  };
 
   return (
     <Box id="skills" as="section" py={20} position="relative">
@@ -91,7 +102,7 @@ export function Skills() {
                               px={3}
                               py={1.5}
                               borderRadius="full"
-                              colorScheme={levelColors[skill.level] || 'gray'}
+                              colorScheme={getProficiencyBadge(skill.level)}
                               variant="subtle"
                               fontSize="sm"
                               cursor="help"

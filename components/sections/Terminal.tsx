@@ -35,6 +35,7 @@ export function Terminal() {
   const [typingLine, setTypingLine] = useState<string>("");
   const [isTyping, setIsTyping] = useState(false);
   const [currentTypingIndex, setCurrentTypingIndex] = useState(0);
+  const [isTerminalActive, setIsTerminalActive] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -139,42 +140,38 @@ export function Terminal() {
         if (currentTypingIndex < line.length) {
           setTypingLine(prev => prev + line[currentTypingIndex]);
           setCurrentTypingIndex(prev => prev + 1);
-          // Real-time auto-scroll during typing
-          contentRef.current?.scrollTo({
-            top: contentRef.current.scrollHeight,
-            behavior: 'smooth'
-          });
+          // Only auto-scroll if terminal is active during typing
+          if (isTerminalActive) {
+            contentRef.current?.scrollTo({
+              top: contentRef.current.scrollHeight,
+              behavior: 'smooth'
+            });
+          }
         } else {
           // Line finished typing
           setLines(prev => [...prev, line]);
           setTypingLine("");
           setIsTyping(false);
           setCurrentBootLine(prev => prev + 1);
-          // Auto-scroll after each line
-          contentRef.current?.scrollTo({
-            top: contentRef.current.scrollHeight,
-            behavior: 'smooth'
-          });
+          // Only auto-scroll if terminal is active after each line
+          if (isTerminalActive) {
+            contentRef.current?.scrollTo({
+              top: contentRef.current.scrollHeight,
+              behavior: 'smooth'
+            });
+          }
         }
       }, 8); // Even faster typing speed
       
       return () => clearTimeout(typingTimer);
     } else if (currentBootLine >= bootSequence.length) {
       setIsBooting(false);
-      // Focus input after boot completes
-      setTimeout(() => {
-        inputRef.current?.focus();
-        // Auto-scroll to bottom after boot
-        contentRef.current?.scrollTo({
-          top: contentRef.current.scrollHeight,
-          behavior: 'smooth'
-        });
-      }, 300);
+      // Don't auto-focus after boot - let user click to interact
     }
   }, [isBooting, currentBootLine, currentTypingIndex, isTyping, bootSequence]);
 
   // Typing animation for command output
-  const typeOutput = (output: string[]) => {
+  const typeOutput = (output: string[], onComplete?: () => void) => {
     setIsTyping(true);
     let currentLineIndex = 0;
     let currentCharIndex = 0;
@@ -186,11 +183,13 @@ export function Terminal() {
         if (currentCharIndex < line.length) {
           setTypingLine(line.substring(0, currentCharIndex + 1));
           currentCharIndex++;
-          // Real-time auto-scroll during typing
-          contentRef.current?.scrollTo({
-            top: contentRef.current.scrollHeight,
-            behavior: 'smooth'
-          });
+          // Only auto-scroll if terminal is active during typing
+          if (isTerminalActive) {
+            contentRef.current?.scrollTo({
+              top: contentRef.current.scrollHeight,
+              behavior: 'smooth'
+            });
+          }
           setTimeout(typeNextChar, 3); // Much faster typing speed for output
         } else {
           // Line finished
@@ -198,32 +197,32 @@ export function Terminal() {
           setTypingLine("");
           currentLineIndex++;
           currentCharIndex = 0;
-          // Auto-scroll after each line
-          contentRef.current?.scrollTo({
-            top: contentRef.current.scrollHeight,
-            behavior: 'smooth'
-          });
+          // Only auto-scroll if terminal is active after each line
+          if (isTerminalActive) {
+            contentRef.current?.scrollTo({
+              top: contentRef.current.scrollHeight,
+              behavior: 'smooth'
+            });
+          }
           setTimeout(typeNextChar, 20); // Very short pause between lines
         }
       } else {
         setIsTyping(false);
-        // Auto-scroll to bottom immediately after typing completes
-        contentRef.current?.scrollTo({
-          top: contentRef.current.scrollHeight,
-          behavior: 'smooth'
-        });
+        // Auto-scroll to bottom immediately after typing completes only if active
+        if (isTerminalActive) {
+          contentRef.current?.scrollTo({
+            top: contentRef.current.scrollHeight,
+            behavior: 'smooth'
+          });
+        }
+        if (onComplete) {
+          onComplete();
+        }
       }
     };
     
     typeNextChar();
   };
-
-  // Focus input on mount (after boot)
-  useEffect(() => {
-    if (!isBooting) {
-      inputRef.current?.focus();
-    }
-  }, [isBooting]);
 
   // Handle command execution
   const runCommand = (cmd: string) => {
@@ -262,14 +261,47 @@ export function Terminal() {
 
     if (output === "__CLEAR__") {
       setLines([bootSequence.join("\n").split("\n").slice(0, -1).join("\n")]); // Keep boot header
+      // Auto-scroll to bottom after clear
+      setTimeout(() => {
+        contentRef.current?.scrollTo({
+          top: contentRef.current.scrollHeight,
+          behavior: 'smooth'
+        });
+      }, 100);
       return;
     }
 
     if (Array.isArray(output)) {
-      typeOutput(output);
+      typeOutput(output, () => {
+        // Always scroll to bottom after typing completes to show the prompt
+        setTimeout(() => {
+          contentRef.current?.scrollTo({
+            top: contentRef.current.scrollHeight,
+            behavior: 'smooth'
+          });
+        }, 100);
+      });
     } else {
-      typeOutput([output]);
+      typeOutput([output], () => {
+        // Always scroll to bottom after typing completes to show the prompt
+        setTimeout(() => {
+          contentRef.current?.scrollTo({
+            top: contentRef.current.scrollHeight,
+            behavior: 'smooth'
+          });
+        }, 100);
+      });
     }
+  };
+
+  // Handle terminal activation
+  const handleTerminalFocus = () => {
+    setIsTerminalActive(true);
+  };
+
+  const handleTerminalClick = () => {
+    setIsTerminalActive(true);
+    inputRef.current?.focus();
   };
 
   // Handle key presses
@@ -331,14 +363,15 @@ export function Terminal() {
     }
   }, [input, isBooting]);
 
-  // Auto-scroll to bottom when new lines are added
+  // Auto-scroll to bottom when new lines are added (only if terminal is active, but always when typing finishes)
   useEffect(() => {
-    // Real-time auto-scroll for any content changes
-    contentRef.current?.scrollTo({
-      top: contentRef.current.scrollHeight,
-      behavior: 'smooth'
-    });
-  }, [lines, typingLine]);
+    if (isTerminalActive || !isTyping) {
+      contentRef.current?.scrollTo({
+        top: contentRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  }, [lines, typingLine, isTerminalActive, isTyping]);
 
   return (
     <Box id="about" as="section" py={20}>
@@ -352,12 +385,23 @@ export function Terminal() {
           >
             <SectionTitle 
               title="About Me"
-              subtitle="Get to know me better through this interactive terminal experience"
+              subtitle="An interactive terminal experience showcasing my professional journey"
             />
           </motion.div>
           
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-            <Box ref={terminalRef} bg={bg} p={6} fontFamily="mono" borderRadius="lg" shadow="xl">
+            <Box 
+              ref={terminalRef} 
+              bg={bg} 
+              p={6} 
+              fontFamily="mono" 
+              borderRadius="lg" 
+              shadow="xl"
+              onClick={handleTerminalClick}
+              onFocus={handleTerminalFocus}
+              tabIndex={0}
+              cursor="text"
+            >
               <VStack align="stretch" spacing={2} height="500px" maxH="500px">
                 {/* Terminal Header */}
                 <HStack mb={2} pb={2} borderBottom="1px solid" borderColor="gray.600" flexShrink={0}>
@@ -472,6 +516,7 @@ export function Terminal() {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyDown}
+                        onFocus={handleTerminalFocus}
                         placeholder=""
                         spellCheck={false}
                       />

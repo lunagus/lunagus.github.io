@@ -15,7 +15,7 @@
       },
       "subject": {
         "label": "Subject",
-        "placeholder": "What's this about?",
+        "placeholder": "Project Inquiry",
         "required": false
       },
       "message": {
