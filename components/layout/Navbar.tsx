@@ -134,6 +134,7 @@ export function Navbar() {
         borderColor={borderColor}
         transition="all 0.3s"
         boxShadow={scrolled ? 'md' : 'none'}
+        minH="72px"
       >
         <Flex
           maxW="1200px"
@@ -200,7 +201,7 @@ export function Navbar() {
               position="relative"
               bg={useColorModeValue('gray.100', 'gray.700')}
               borderRadius="full"
-              minW="112px"
+              w="112px" // Stabilize language switch width
               h="40px"
               px="4px"
               display="flex"

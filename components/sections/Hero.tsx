@@ -12,20 +12,14 @@ import {
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { Download, ChevronDown } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations'
 import { downloadFile, scrollToSection } from '@/lib/utils'
 import { trackCVDownload, trackContactOpen } from '@/lib/analytics'
 import { useI18n } from '@/lib/i18n/context'
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false)
   const accentColor = useColorModeValue('brand.600', 'brand.400')
   const { t } = useI18n()
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   const handleDownloadCV = () => {
     downloadFile('/CV.pdf', 'CV.pdf')
@@ -35,8 +29,6 @@ export function Hero() {
   const scrollToNext = () => {
     scrollToSection('projects', 80)
   }
-
-  if (!mounted) return null
 
   return (
     <Box
