@@ -3,33 +3,52 @@ import { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Agustin Luna | Portfolio',
-  description: 'Passionate Software Developer with a strong foundation in modern web development technologies. Experienced in building scalable web applications using React, Django, Node.js, and more.',
-  keywords: ['developer', 'portfolio', 'web development', 'full-stack', 'React', 'Django', 'Node.js', 'JavaScript', 'Python'],
+  metadataBase: new URL('https://lunagus.github.io/portfolio'),
+  title: {
+    default: 'Agustin Luna | Software Developer',
+    template: '%s | Agustin Luna',
+  },
+  description:
+    'Software Developer specializing in building clean, scalable and high-performance applications using React, Next.js, Django, Node.js and modern tooling.',
+  keywords: [
+    'software developer',
+    'full-stack',
+    'react developer',
+    'django developer',
+    'typescript',
+    'python',
+    'next.js',
+    'portfolio',
+    'web engineer',
+  ],
   authors: [{ name: 'Agustin Luna' }],
   creator: 'Agustin Luna',
+
   openGraph: {
-    title: 'Agustin Luna | Portfolio',
-    description: 'Passionate Software Developer with a strong foundation in modern web development technologies',
+    title: 'Agustin Luna | Software Developer',
+    description:
+      'Software Developer specializing in modern web technologies, building scalable and high-performance applications.',
     type: 'website',
-    locale: 'en_US',
-    siteName: 'Agustin Luna Portfolio',
     url: 'https://lunagus.github.io/portfolio',
+    siteName: 'Agustin Luna Portfolio',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Developer Portfolio',
+        alt: 'Portfolio Preview',
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
-    title: 'Agustin Luna | Full-Stack Developer Portfolio',
-    description: 'Passionate Software Developer with a strong foundation in modern web development technologies',
+    title: 'Agustin Luna | Software Developer',
+    description:
+      'Software Developer specializing in modern web technologies, building clean and scalable applications.',
     images: ['/og-image.png'],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -41,21 +60,35 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+
   alternates: {
     canonical: 'https://lunagus.github.io/portfolio',
   },
+
   manifest: '/favicons/site.webmanifest',
-  themeColor: '#ffffff',
+
   icons: {
     icon: [
       { url: '/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicons/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/favicons/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+      {
+        url: '/favicons/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        url: '/favicons/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
     ],
     shortcut: ['/favicons/favicon.ico'],
     apple: [
-      { url: '/favicons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      {
+        url: '/favicons/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
     ],
   },
 }
@@ -107,22 +140,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        {/* Plausible Analytics - Lightweight and privacy-friendly */}
-        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
-          <script
-            defer
-            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
-            src="https://plausible.io/js/script.js"
-          />
-        )}
-        {/* Umami Analytics - Alternative lightweight option */}
-        {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
-          <script
-            async
-            src={process.env.NEXT_PUBLIC_UMAMI_SRC || 'https://analytics.umami.is/script.js'}
-            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-          />
-        )}
+        {/* Umami Analytics */}
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="05887dfe-ec7d-4d8a-8000-ca40f3be3a6e"
+        />
       </head>
       <body suppressHydrationWarning>
         <Providers>{children}</Providers>

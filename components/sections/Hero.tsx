@@ -15,7 +15,7 @@ import { Download, ChevronDown } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations'
 import { downloadFile, scrollToSection } from '@/lib/utils'
-import { trackCVDownload } from '@/lib/analytics'
+import { trackCVDownload, trackContactOpen } from '@/lib/analytics'
 import { useI18n } from '@/lib/i18n/context'
 
 export function Hero() {
@@ -115,7 +115,10 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                onClick={() => scrollToSection('contact', 80)}
+                onClick={() => {
+                  trackContactOpen('hero')
+                  scrollToSection('contact', 80)
+                }}
                 _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
                 transition="all 0.2s"
               >

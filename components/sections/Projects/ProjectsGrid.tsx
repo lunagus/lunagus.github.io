@@ -20,7 +20,7 @@ import { ProjectModal } from './ProjectModal'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Card } from '@/components/ui/Card'
 import { staggerContainer, staggerItem } from '@/lib/animations'
-import { trackProjectClick } from '@/lib/analytics'
+import { track, trackProjectClick } from '@/lib/analytics'
 import { useI18n } from '@/lib/i18n/context'
 import projectsData from '@/data/projects.json'
 
@@ -58,7 +58,21 @@ export function ProjectsGrid() {
             >
               {projects.map((project, index) => (
                 <motion.div key={project.id} variants={staggerItem}>
-                  <Card hover tilt onClick={() => setSelectedProject(project)} cursor="pointer" h="100%" display="flex" flexDirection="column">
+                  <Card
+                    hover
+                    tilt
+                    onClick={() => {
+                      track('project_view', {
+                        project: getProjectContent(project, 'title') || project.title,
+                        source: 'card',
+                      })
+                      setSelectedProject(project)
+                    }}
+                    cursor="pointer"
+                    h="100%"
+                    display="flex"
+                    flexDirection="column"
+                  >
                     <Box
                       position="relative"
                       width="100%"

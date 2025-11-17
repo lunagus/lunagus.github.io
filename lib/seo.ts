@@ -17,7 +17,7 @@ export function generateSEOMetadata(config: SEOConfig) {
     description,
     keywords = [],
     image = '/og-image.png',
-    url = 'https://yourusername.github.io/portfolio',
+    url = 'https://lunagus.github.io/',
     type = 'website',
   } = config
 

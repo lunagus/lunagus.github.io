@@ -28,6 +28,7 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { fadeInLeft } from '@/lib/animations'
 import { scrollToSection, throttle } from '@/lib/utils'
 import { useI18n } from '@/lib/i18n/context'
+import { trackContactOpen } from '@/lib/analytics'
 
 export function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -110,6 +111,9 @@ export function Navbar() {
 
   const handleNavClick = (href: string) => {
     const id = href.replace('#', '')
+    if (id === 'contact') {
+      trackContactOpen('nav')
+    }
     scrollToSection(id, 80)
     onClose()
   }
