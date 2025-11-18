@@ -38,6 +38,17 @@ export function ProjectsGrid() {
     return ''
   }
 
+  const getProjectTitleForAlt = (project: Project) => {
+    const translatedTitle = getProjectContent(project, 'title')
+    if (translatedTitle && translatedTitle.trim().length > 0) {
+      return translatedTitle
+    }
+    if (project.title && project.title.trim().length > 0) {
+      return project.title
+    }
+    return `${project.id} project`
+  }
+
   const projects: Project[] = projectsData as Project[]
 
   return (
@@ -85,7 +96,7 @@ export function ProjectsGrid() {
                       {project.screenshots[0] && (
                         <Image
                           src={project.screenshots[0]}
-                          alt={project.title}
+                          alt={`${getProjectTitleForAlt(project)} screenshot`}
                           width="100%"
                           height="100%"
                           objectFit="cover"

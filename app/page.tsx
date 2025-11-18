@@ -1,10 +1,27 @@
+import dynamic from 'next/dynamic'
 import { Layout } from '@/components/layout/Layout'
 import { Hero } from '@/components/sections/Hero'
-import { Terminal } from '@/components/sections/Terminal'
-import { Skills } from '@/components/sections/Skills'
-import { ProjectsGrid } from '@/components/sections/Projects/ProjectsGrid'
-import { ContactForm } from '@/components/sections/ContactForm'
 import { Box } from '@chakra-ui/react'
+
+const ProjectsGrid = dynamic(() => import('@/components/sections/Projects/ProjectsGrid').then((m) => m.ProjectsGrid), {
+  ssr: true,
+  loading: () => null,
+})
+
+const Skills = dynamic(() => import('@/components/sections/Skills').then((m) => m.Skills), {
+  ssr: true,
+  loading: () => null,
+})
+
+const Terminal = dynamic(() => import('@/components/sections/Terminal').then((m) => m.Terminal), {
+  ssr: false,
+  loading: () => null,
+})
+
+const ContactForm = dynamic(() => import('@/components/sections/ContactForm').then((m) => m.ContactForm), {
+  ssr: false,
+  loading: () => null,
+})
 
 export default function Home() {
   return (
