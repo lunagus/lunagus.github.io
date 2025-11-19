@@ -19,10 +19,12 @@ import { useI18n } from '@/lib/i18n/context'
 
 export function Hero() {
   const accentColor = useColorModeValue('brand.600', 'brand.400')
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
 
   const handleDownloadCV = () => {
-    downloadFile('/CV.pdf', 'CV.pdf')
+    const filePath = locale === 'es' ? '/CV-ES.pdf' : '/CV-EN.pdf'
+    const fileName = locale === 'es' ? 'CV-ES.pdf' : 'CV-EN.pdf'
+    downloadFile(filePath, fileName)
     trackCVDownload()
   }
 
