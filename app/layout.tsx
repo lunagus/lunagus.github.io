@@ -120,7 +120,7 @@ export default function RootLayout({
     url: 'https://lunagus.github.io/portfolio',
     sameAs: [
       'https://github.com/lunagus',
-      'https://www.linkedin.com/in/agustin-luna-68a149375/',
+      'https://www.linkedin.com/in/hernan-agustin-luna',
       'https://twitter.com/lunagusk',
     ],
     knowsAbout: [
