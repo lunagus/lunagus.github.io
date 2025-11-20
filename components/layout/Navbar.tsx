@@ -413,7 +413,7 @@ export function Navbar() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Navigation</DrawerHeader>
+          <DrawerHeader>lunagus</DrawerHeader>
           <DrawerBody>
             <VStack spacing={4} align="stretch" pt={4}>
               {/* Mobile Language Toggle */}

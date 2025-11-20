@@ -152,7 +152,7 @@
     "title": "Acerca de",
     "subtitle": "Una experiencia de terminal interactiva que muestra mi trayectoria profesional"
   },
-  "lunagus": {
+  "navigation": {
     "home": "Inicio",
     "projects": "Proyectos",
     "skills": "Habilidades",
@@ -168,6 +168,6 @@
     "loading": "Cargando...",
     "error": "Ocurrió un error",
     "close": "Cerrar",
-    "copyright": "© {{year}} Agustin Luna. Todos los derechos reservados."
+    "copyright": " Agustin Luna. Todos los derechos reservados."
   }
 }

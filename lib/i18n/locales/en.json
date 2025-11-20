@@ -152,7 +152,7 @@
     "title": "About Me",
     "subtitle": "An interactive terminal experience showcasing my professional journey"
   },
-  "lunagus": {
+  "navigation": {
     "home": "Home",
     "projects": "Projects",
     "skills": "Skills",
@@ -168,6 +168,6 @@
     "loading": "Loading...",
     "error": "An error occurred",
     "close": "Close",
-    "copyright": "© {{year}} Agustin Luna. All rights reserved."
+    "copyright": " Agustin Luna. All rights reserved."
   }
 }
