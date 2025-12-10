@@ -4,10 +4,5 @@
     "linkedin": "https://www.linkedin.com/in/hernan-agustin-luna",
     "twitter": "https://twitter.com/lunagusk",
     "email": "mailto:hernanagustinluna@gmail.com"
-  },
-  "emailjs": {
-    "serviceId": "YOUR_SERVICE_ID",
-    "templateId": "YOUR_TEMPLATE_ID",
-    "publicKey": "scsuj5dqs5kLmO3F4"
   }
 }

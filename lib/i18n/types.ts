@@ -48,6 +48,14 @@ export interface TranslationKeys {
         label: string
         loading: string
       }
+      success: {
+        title: string
+        description: string
+      }
+      error: {
+        title: string
+        description: string
+      }
     }
   }
   skills: {

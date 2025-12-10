@@ -86,8 +86,8 @@ export function ContactForm() {
 
       trackContactFormSubmit(true)
       toast({
-        title: 'Message sent successfully!',
-        description: "I'll get back to you as soon as possible.",
+        title: t.contact.form.success.title,
+        description: t.contact.form.success.description,
         status: 'success',
         duration: 5000,
         isClosable: true,
@@ -103,8 +103,8 @@ export function ContactForm() {
       console.error('Formspree error:', error)
       trackContactFormSubmit(false)
       toast({
-        title: 'Failed to send message',
-        description: 'Please try again later or contact me directly via email.',
+        title: t.contact.form.error.title,
+        description: t.contact.form.error.description,
         status: 'error',
         duration: 5000,
         isClosable: true,

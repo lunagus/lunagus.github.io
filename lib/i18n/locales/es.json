@@ -45,6 +45,14 @@
       "submit": {
         "label": "Enviar Mensaje",
         "loading": "Enviando..."
+      },
+      "success": {
+        "title": "¡Mensaje enviado con éxito!",
+        "description": "Te responderé lo antes posible."
+      },
+      "error": {
+        "title": "Error al enviar el mensaje",
+        "description": "Por favor intenta más tarde o contáctame directamente por email."
       }
     }
   },

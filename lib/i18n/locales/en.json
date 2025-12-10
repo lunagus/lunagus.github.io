@@ -45,6 +45,14 @@
       "submit": {
         "label": "Send Message",
         "loading": "Sending..."
+      },
+      "success": {
+        "title": "Message sent successfully!",
+        "description": "I'll get back to you as soon as possible."
+      },
+      "error": {
+        "title": "Failed to send message",
+        "description": "Please try again later or contact me directly via email."
       }
     }
   },
