@@ -9,7 +9,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lunagus.github.io/portfolio'),
+  metadataBase: new URL('https://lunagus.github.io'),
   title: {
     default: 'Agustin Luna | Software Developer',
     template: '%s | Agustin Luna',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description:
       'Software Developer specializing in modern web technologies, building scalable and high-performance applications.',
     type: 'website',
-    url: 'https://lunagus.github.io/portfolio',
+    url: 'https://lunagus.github.io/',
     siteName: 'Agustin Luna Portfolio',
     images: [
       {
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: 'https://lunagus.github.io/portfolio',
+    canonical: 'https://lunagus.github.io/',
   },
 
   manifest: '/favicons/site.webmanifest',
@@ -117,7 +117,7 @@ export default function RootLayout({
       addressRegion: 'Santiago del Estero',
       addressCountry: 'Argentina',
     },
-    url: 'https://lunagus.github.io/portfolio',
+    url: 'https://lunagus.github.io/',
     sameAs: [
       'https://github.com/lunagus',
       'https://www.linkedin.com/in/hernan-agustin-luna',

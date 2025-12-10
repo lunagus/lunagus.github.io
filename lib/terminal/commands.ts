@@ -172,7 +172,7 @@ export const commands: TerminalCommand[] = [
       "",
       `📧 Email: hernanagustinluna@gmail.com`,
       `📍 Location: La Banda, Santiago del Estero, Argentina`,
-      `🌐 Website: https://lunagus.github.io/portfolio`,
+      `🌐 Website: https://lunagus.github.io`,
       "",
       "💼 Open to: Full-time opportunities, freelance projects, and collaboration.",
     ],
