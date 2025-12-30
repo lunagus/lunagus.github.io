@@ -61,7 +61,7 @@ export const commands: TerminalCommand[] = [
       formatKV("profile", "Professional summary & elevator pitch"),
       formatKV("whoami", "Identity & active status"),
       formatKV("uptime", "System statistics & experience stats"),
-      formatKV("projects", "Portfolio index (use --view=<ID>)"),
+      formatKV("projects", "Portfolio index (use 'projects <ID>')"),
       formatKV("stack", "Technical stack & tooling"),
       formatKV("experience", "Work history timeline"),
       formatKV("social", "Connect links"),
@@ -205,11 +205,44 @@ export const commands: TerminalCommand[] = [
     ],
   },
 
-  // --- PROJECTS (Main List) ---
+  // --- PROJECTS (Main List & Detail View) ---
   {
     name: "projects",
-    description: "List all projects.",
-    handler: () => {
+    description: "List projects or view details (e.g., 'projects 1').",
+    handler: (args: string[]) => {
+      // Check if user requested a specific project: "1", "--1", "-1", "SongSeek", "--view=1"
+      if (args.length > 0) {
+        const rawId = args[0].toLowerCase().replace(/^--?/, '').replace('view=', '');
+        
+        // Try to match by ID or roughly by Title
+        const project = projectsData.find((p: any) => 
+          p.id === rawId || 
+          projectMeta[p.id]?.title.toLowerCase().startsWith(rawId)
+        );
+
+        if (project) {
+          const meta = projectMeta[project.id] ?? { title: project.id, description: "" };
+          return [
+            meta.title.toUpperCase(),
+            "────────────────────────",
+            meta.description,
+            "",
+            formatKV("Stack", project.technologies.join(", ")),
+            formatKV("GitHub", project.githubUrl),
+            project.demoUrl ? formatKV("Demo", project.demoUrl) : "",
+            "",
+            "> Type 'projects' to return to list.",
+          ];
+        } else {
+             return [
+                `❌ Project '${args[0]}' not found.`, 
+                "", 
+                "Type 'projects' to see the full list."
+             ];
+        }
+      }
+
+      // Default: List all projects
       const output = ["FEATURED WORK"];
 
       // Process Featured
@@ -231,30 +264,9 @@ export const commands: TerminalCommand[] = [
           output.push(`  [${p.id}] ${meta.title.padEnd(14)} ${meta.description}`);
         });
 
-      output.push("", "> Type 'projects --view=<ID>' (e.g., projects --view=1) for details.");
+      output.push("", "> Type 'projects <ID>' (e.g., 'projects 1') for details.");
       
       return output;
     },
   },
-
-  // --- DYNAMIC PROJECT DETAILS ---
-  ...projectsData.map((project: any) => {
-    const meta = projectMeta[project.id] ?? { title: project.id, description: "" };
-    
-    return {
-      name: `projects --view=${project.id}`,
-      description: `View details for ${meta.title}`,
-      handler: () => [
-        meta.title.toUpperCase(),
-        "────────────────────────",
-        meta.description,
-        "",
-        formatKV("Stack", project.technologies.join(", ")),
-        formatKV("GitHub", project.githubUrl),
-        project.demoUrl ? formatKV("Demo", project.demoUrl) : "",
-        "",
-        "> Type 'projects' to return to list.",
-      ],
-    };
-  }),
 ];
